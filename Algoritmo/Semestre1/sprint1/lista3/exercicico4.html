@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dragon Ball Calculadora</title>
+</head>
+<body>
+    <h1>Dragon Ball Calculadora</h1>
+    <p>Calculadora  Dragon Ball para saber o seu ki guerreiro
+        Sayajin. <br>
+    </p>
+    <h3>Quer saber o seu ki nas diferentes formas?</h3>
+    Digite o seu nome guerreiro: <input id="iptNome"><br> <br>
+    Digite o seu ki normal: <input id="iptKi">
+    <button onclick="Multiplicar()">Ver ki em cada forma</button>
+</body>
+</html>
+<script>
+    function Multiplicar() {
+        alert('Guerreio ' + iptNome.value + ' o seu ki na fase Super Sayajin é de '+ iptKi.value * 50)
+        alert('Guerreio ' + iptNome.value + ' o seu ki na fase Super Sayajin 2 é de '+ iptKi.value * 100)
+    }
+</script>

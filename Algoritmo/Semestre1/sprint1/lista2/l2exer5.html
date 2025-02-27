@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l2exer5</title>
+</head>
+<body>
+    <h1>Notas da escola</h1>
+    Digite a sua nota: <input id="ipt_nota">
+    <button onclick = "op_avo()">Opinião da avó</button>
+    <button onclick = "op_mae()">Opinião da mãe</button>
+</body>
+</html>
+<script>
+    function op_avo() {
+        alert ( "Muito bem, que neto inteligente, porque tirou" + ipt_nota.value)
+    }
+    function op_mae() {
+        alert ( "Não fez mais que tua obrigação com essa nota" + ipt_nota.value)
+    }
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>l2exer3</title>
+</head>
+<body>
+    <h1>Times de futebol</h1>
+    Informe qual time você torce: <input id="ipt_time">
+    <br><br>
+    Informe a quantidade de titulos o seu time possui: <input id="ipt_titulos">
+    <br><br>
+    <button onclick="Info_Time()">Amo meu time</button>
+</body>
+</html>
+<script>
+    function Info_Time() {
+        var ax_time = ''
+        var ax_titulos = ipt_titulos.value;
+        ax_time = ipt_time.value;
+        alert('O time '+ ax_time + ' tem ' + ax_titulos + 'titulos');
+    }    
+</script>

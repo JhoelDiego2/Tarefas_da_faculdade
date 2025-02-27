@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilhete único</title>
+</head>
+<body>
+    <h1> Bilhete Único de estudante </h1>
+    <h2> Calculadora para saber a economia ao usar um bilhete único de estudante </h2>
+    Digite o valor atual da passagem: <input id="ipt_valor"> <br><br>
+    Digite a quantidade de viagens a fazer po mês: <input id="ipt_quant">
+    <button onclick="economia()">Ver economia</button>
+</body>
+</html>
+<script>
+    function economia() {
+        alert('Você economizara R$' + (ipt_valor.value * ipt_quant.value) / 2 + ' por mês');
+    }
+</script>

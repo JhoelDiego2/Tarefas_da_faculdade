@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentadoria</title>
+</head>
+<body>
+    <h1>Aposentadoria</h1>
+    <p>A aposentadoria para homens no Brasil atualmente é de 70 anos. <br>
+    A aposentadoria para mulheres no Brasil atualmente é de 60 anos. </p>
+    <h4>Informe a sua idade para saber quanto tempo falta para sua aposentadoria</h4>
+     Digite a sua idade: <input id="idade">
+    <button onclick="AposentHomem()">Aposentadoria Homem</button>
+    <button onclick="AposentMulher()">Aposentadoria Mulher</button>
+</body>
+</html>
+<script>
+    function AposentHomem() {
+        alert('A quantidade de tempo para a sua aposentadoria é de: ' + (70 - idade.value));
+    }
+    function AposentMulher() {
+        alert('A quantidade de tempo para a sua aposentadoria é de: ' + (60 - idade.value));
+    }
+</script>

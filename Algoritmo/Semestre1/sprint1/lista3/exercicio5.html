@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpTech</title>
+</head>
+<body>
+    <h1>Calculadora SPTECH</h1>
+    <h3>Calculadora para saber se você passa de ano e vai ao tão esperado
+        estagio nas empresas parceiras da SPTECH
+    </h3><br>
+    Informe a sua nota na avaliação continuada: <input id="ipt_continuada"><br><br>
+    Informe a sua nota na avaliação semestral: <input id="ipt_semestral"><br><br>
+    Informe o seu nome: <input id="ipt_nome">
+    <button onclick="media()">Calcular Média</button>
+</body>
+</html>
+<script>
+    function media() {
+        alert ('A média de'+ ipt_nome.value + 'será de ' + (ipt_continuada.value * 40 + ipt_semestral.value * 60) / 100)
+    }
+</script>

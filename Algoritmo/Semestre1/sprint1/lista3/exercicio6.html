@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando com jhoel </title>
+</head>
+<body>
+        <h1>CALCULADORA</h1>
+        Digite o seu primeiro número: <input id="ipt_num1"><br><br>
+        Digite o seu segundo número: <input id="ipt_num2"><br><br><br><br>
+    <button onclick="somar()">somar </button>
+    <button onclick=" subtrair()">Subtraiar</button>
+    <button onclick = "multiplicar()">Multiplicar</button>
+    <button onclick = "dividir()">dividir</button><br><br>
+
+</body>
+</html>
+<script>
+    function somar() {
+    var ax_num1 = Number(ipt_num1.value);
+    var ax_num2 =  Number(ipt_num2.value);
+        alert ('A soma entre '+ ipt_num1.value + ' e ' + ipt_num2.value + ' é = ' + (Number(ipt_num1.value) + Number(ipt_num2.value)));
+    }
+    function subtrair() {
+    var ax_num1 = Number(ipt_num1.value);
+    var ax_num2 =  Number(ipt_num2.value);
+        alert ("A   diferença entre " + ax_num1 + ' e ' + ax_num2 + ' é = ' + (ax_num1 - ax_num2));
+    }
+
+    function multiplicar() {
+        alert ("O produto entre " + ipt_num1.value + ' e ' + ipt_num2.value + ' é = ' + ipt_num1.value * ipt_num2.value)
+    }
+    function dividir() {
+        alert ("A razão entre " + ipt_num1.value + ' e ' + ipt_num2.value + ' é = ' + ipt_num1.value / ipt_num2.value);
+    }
+
+
+</script>
