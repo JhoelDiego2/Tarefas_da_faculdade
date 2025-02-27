@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dragon Ball Calculadora</title>
+</head>
+<body>
+    <h1>Dragon Ball Calculadora</h1>
+    <p>Calculadora  Dragon Ball para saber o seu ki guerreiro
+        Sayajin. <br>
+    </p>
+    <h3>Quer saber o seu ki nas diferentes formas?</h3>
+    Digite o seu nome guerreiro: <input id="iptNome"><br> <br>
+    Digite o seu ki normal: <input id="iptKi">
+    <u>Transformar em ....</u>
+    <button onclick="ssj()">SSJ</button>
+    <button onclick="ssj2()">SSJ2</button>
+    <button onclick="ssj3()">SSJ3</button><br><br>
+    <i id="texto"></i><br><br>
+</body>
+</html>
+<script>
+    function ssj() {
+       var ki = iptKi.value
+       var ssj = ki * 50
+       texto.innerHTML += `Após se tranformar em SSJ, O ${ki} desse Sayajin passa a ser de ${ssj} <br>`
+    }
+    function ssj2() {
+       var ki = iptKi.value
+       var ssj = ki * 100
+       texto.innerHTML += `Após se tranformar em SSJ1, O ${ki} desse Sayajin passa a ser de ${ssj} <br>`
+    }
+    function ssj3() {
+       var ki = iptKi.value
+       var ssj = ki * 200
+       texto.innerHTML += `Após se tranformar em SSJ2, O ${ki} desse Sayajin passa a ser de ${ssj} <br>`
+    }
+</script>

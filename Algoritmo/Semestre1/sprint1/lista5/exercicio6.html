@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <h1>MITA BANK</h1>
+    ----------------------------------------------------------- <br><br>
+    Digite o valor sua renda familiar: <input id="ipt_familia"> <br><br><br>
+    Digite o valor da prestação: <input id="ipt_prestacao">
+    <button onclick="financiamento()">Verificar financiamento</button> <br><br>
+    ----------------------------------------------------------- <br><br>
+    <b id="text"></b> <br>
+    <b id ="text2"style="color: tomato;"></b>
+</body>
+</html>
+<script>
+    function financiamento() {
+        var resultado = (ipt_prestacao.value / ipt_familia.value) * 100
+        text.innerHTML = `A prestação corresponde a ${resultado}% da renda familiar`
+        text2.innerHTML =""
+        if (resultado > 30) {
+            text2.innerHTML = `Será necessário complementar a renda familiar`
+        }
+    }
+</script>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador Financeiro</title>
+  </head>
+
+  <style>
+    #background {
+      display: flex;
+      justify-content: center;
+      background-image: url("https://media.seudinheiro.com/uploads/2018/12/soja.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    img {
+      cursor: pointer;
+      width: 500px;
+      margin-right: 20px;
+      border-radius: 10px;
+      margin-top: 20vh;
+      height: 350px;
+      width: 400px;
+      transition: 0.5s;
+    }
+
+    img:hover {
+      -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+    .card_simulator {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      display: block;
+      margin-top: 20vh;
+      justify-content: center;
+      text-align: center;
+      color: black;
+      background-color: white;
+      width: 700px;
+      border-radius: 10px;
+      box-shadow: 1px 1px 10px grey;
+      padding: 20px;
+      transition: 0.5s;
+    }
+
+    .card_simulator:hover {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+    }
+
+    .column {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 40px;
+      margin-left: 40px;
+    }
+
+    input {
+      font-size: 25px;
+      height: 30px;
+      width: 200px;
+      margin-top: 10px;
+      border: none;
+      border-bottom: 1px solid grey;
+    }
+
+    input:focus {
+      box-shadow: 0 0 0 0;
+      outline: 0;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: transparent;
+      border: 1px solid grey;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 180px;
+      height: 40px;
+      transition: 1s;
+    }
+
+    button:hover {
+      background-color: #d8f3dc;
+    }
+
+    .color_red {
+      color: #780000;
+    }
+    .color_success {
+      color: #52b788;
+    }
+
+    .cards_content {
+      border-radius: 10px 10px 0px 0px;
+      padding: 20px;
+      background-color: #edf2f4;
+      box-shadow: 1px 1px 10px grey;
+    }
+    .cards_content_cg {
+      padding: 20px;
+      border-radius: 0px 0px 10px 10px;
+      background-color: #40916c;
+      color: white;
+      box-shadow: 1px 1px 10px grey;
+    }
+
+    #campos {
+      margin-top: 50px;
+    }
+
+    span {
+      font-size: 13px;
+    }
+  </style>
+  <body id="background">
+    <img
+      src="https://cdn.discordapp.com/attachments/941765312540454982/951835897769377812/grao_tech_1.png"
+      alt=""
+    />
+
+    <div class="card_simulator">
+      <h2>Simulador Financeiro</h2>
+
+      <div id="campos">
+        <span
+          >Simule a quantidade de redução/perdas não utilizando o nosso sistema
+          e utilizando.</span
+        >
+        <div class="row">
+          <div class="column">
+            <span>Valor investido na Safra: </span>
+
+            <input
+              type="number"
+              name=""
+              placeholder="R$00,00"
+              id="qtd_investimentos"
+            />
+          </div>
+          <div class="column">
+            <span>Quantidade colhida na safra: Kg</span>
+
+            <input type="number" placeholder="0kg" name="" id="qtd_graos" />
+          </div>
+        </div>
+        <div>
+          <button onclick="calcular()">Calcular</button>
+        </div>
+        <div id="resultado"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  function calcular() {
+    //   Quantidade de Kilos
+    var quantidade = qtd_graos.value;
+
+    // Quantidade de Investimento
+    var quantidade_inves = qtd_investimentos.value;
+
+    // Porcentagens e o prejuizo sem o arduino 20%
+    var porcent_perdas = (quantidade * 20) / 100;
+    var prejuizo = (porcent_perdas / 60) * 201.77;
+
+    // Quantidade de Sacas totais
+    var sacas = quantidade / 60;
+
+    // Lucro total sem calcular o investimento ou perdas
+    var sacas_lucro = sacas * 201.77;
+
+    // Porcentagem da perda com o nosso sistema arduino 5%
+    var perdas_com_arduino = (sacas_lucro * 5) / 100;
+
+    // lucro Liquido - investimento
+    var lucro_liquido = sacas_lucro - quantidade_inves;
+
+    // Calculo de lucro e prejuizo
+    var sc_prejuizo = sacas_lucro - prejuizo;
+
+    // Calculo final com perdas e investimento
+    var calcular = sacas_lucro - prejuizo - quantidade_inves;
+
+    // Calculo de lucro Bruto Arduino - prejuizo arduino
+    var sc_prejuizo_arduino = sacas_lucro - perdas_com_arduino;
+
+    // Calculo de lucro Líquido Arduino - prejuizo arduino
+    var sc_prejuizo_arduino_liquido =
+      sacas_lucro - quantidade_inves - perdas_com_arduino;
+
+    var reducao = sc_prejuizo_arduino_liquido - calcular;
+
+    // Formatados
+
+    var format_reducao = reducao.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    var sc_arduino = sc_prejuizo_arduino.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    var sc_arduino_liquido = sc_prejuizo_arduino_liquido.toLocaleString(
+      "pt-BR",
+      {
+        style: "currency",
+        currency: "BRL",
+      }
+    );
+
+    var lq = lucro_liquido.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    // Sacas_fromatadas
+    var sacas_format = sacas_lucro.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    var sc_format = sc_prejuizo.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    // Lucro formatado para BRL
+    var formation_lucro = sacas_lucro.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    // Calculo formatado para BRL
+    var prejuizo_format = calcular.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    // Resultado na DIV
+    resultado.innerHTML = `
+        <h1>Resultado</h1>
+
+
+        <div class="cards_content">
+            <h2>Sem usar o nosso sistema GrãoTech:</h2>
+            <div>
+                <h3 class="color_success">Estimativa de lucro bruto s/perdas: ${formation_lucro} </h3>
+            </div>
+            <div>
+                <h3 class="color_success">Lucro líquido s/perdas: ${lq} </h3>
+            </div>
+            <div>
+                <h3 class="color_red">Lucro Bruto: ${sc_format} </h3>
+            </div>
+            <div>
+                <h3 class="color_red">Lucro Líquido: ${prejuizo_format} </h3>
+            </div>
+        </div>
+        <div class="cards_content_cg">
+            <h2>Usando o nosso sistema GrãoTech:</h2>
+            <div>
+                <h3>Lucro Bruto: ${sc_arduino} </h3>
+            </div>
+            <div>
+                <h3>Lucro Líquido: ${sc_arduino_liquido} </h3>
+            </div>
+            <hr>
+            <div>
+                <h3>Redução de Prejuizo: ${format_reducao} </h3>
+            </div>
+
+        </div>
+
+    `;
+  }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SALARIO É BOM</h1>
+    Digite o seu salário atual: <input id="salario">
+    <button onclick="sal_atual()">Confirmar salario</button><br><br>
+    <button onclick="subtracao()">Pagar conta de 100</button>
+    <button onclick="subtracao2()">Pagar conta de 500</button>
+    <button onclick="adicao()">Ganhar 2000 na loteria</button>
+    <b id="texto"></b>
+</body>
+</html>
+<script>
+    var atual = 0 
+    var total = 0 
+    function sal_atual() {
+        atual = salario.value
+        texto.innerHTML = `Grana atual: R$${atual}`
+    }
+    function subtracao() {
+        atual = atual - 100
+        texto.innerHTML = `Grana atual: R$${atual}`
+    }
+    function subtracao2() {
+        atual = atual - 500
+        texto.innerHTML = `Grana atual: R$${atual}`
+    }
+    function adicao() {
+        atual = atual + 2000
+        texto.innerHTML = `Grana atual: R$${atual}`
+    }
+</script>

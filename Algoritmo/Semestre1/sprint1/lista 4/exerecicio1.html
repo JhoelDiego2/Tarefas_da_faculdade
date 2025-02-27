@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculando a suas fases do seu sonho 💤💤💤</h1>
+    ---------------------------------------------------------------------------------------<br><br><br>
+    Digite as suas horas de sonho: <input id="horas">
+    <button onclick="calcular()">Calcular Sono</button> <br> <br>
+    <b id="texto"></b>
+</body>
+</html>
+<script>
+    var horadefase = 0
+    function calcular() {
+        horadefase = Number(horas.value);
+        var fase1 = 0.05 * horadefase;
+        var fase2 = 0.45 * horadefase;
+        var fase3 = 0.30 * horadefase;
+        var fase4 = 0.20 * horadefase;
+    
+        texto.innerHTML += `Ao dormir ${horas.value} horas, você dormiu: <br> <br>
+         ${fase1} horas na fase 1 <br><br>
+         ${fase2} horas na fase 2 <br><br>
+         ${fase3} horas na fase 3 <br><br>
+         ${fase4} horas na fase REM`
+    }
+</script>

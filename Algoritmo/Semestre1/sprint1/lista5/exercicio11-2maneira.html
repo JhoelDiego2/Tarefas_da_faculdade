@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FAMILIA</h1>
+    ----------------------------------------------------------- <br><br>
+    Digite a quantidade de filhos que o senhor(a) tem: <input id="ipt_quantidade"> 
+    <button onclick="analise()">Analisar familia</button>
+    <div  id="text"></div>
+</body>
+</html>
+<script>
+    function analise() {
+        var filhos = ipt_quantidade.value
+        text.innerHTML = ''
+        if (filhos >= 1) {
+        text.innerHTML += `<p>Não tem TV</p>`
+        }  
+        if (filhos >= 2) {
+                text.innerHTML += `<p>Não tem internet</p>`
+        }  
+        if (filhos >= 3) {
+                    text.innerHTML += `<p>Não tem video game</p>`
+        }
+        if (filhos >= 4) {
+                    text.innerHTML += `<p>Não tem Netflix</p>`
+        }
+            
+        }
+</script>

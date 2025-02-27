@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>TABUADA DE JHOEL </H1>
+    --------------------------
+    <H3>Irei te ajudar com a tabuada de um número</H3><br>
+    -------------------------- <br>
+    Informe o seu número: <input id="numero"> <br>
+    -------------------------- <br>
+    <button onclick="tabuada()">Ver Tabuada</button>
+    <b id="resultado"></b>
+</body>
+</html>
+<script>
+    var numerotab =  0;
+    var contador = 0 ;
+    function tabuada() {
+        numerotab = numero.value * contador ;
+        resultado.innerHTML +=`${numero.value} x ${contador} = ${numerotab} <br>`;
+        contador = contador + 1 ;
+    }
+</script>

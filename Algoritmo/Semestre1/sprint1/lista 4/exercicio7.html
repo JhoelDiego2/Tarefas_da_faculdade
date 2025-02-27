@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora do IMC</h1>
+    Digite o seu peso[KG]: <input id="peso"><br><br>
+    Digite a sua altura[M]: <input id="altura">
+    <button onclick="calculoimc()">Calcular IMC</button>
+    <U id="texto"></U>
+</body>
+</html>
+<script>
+    function calculoimc() {
+        var resultado = peso.value / (altura.value * altura.value)
+        texto.innerHTML += `O seu Indice de Massa Corporal(IMC) é de ${resultado} kg/m²`
+    }
+</script>

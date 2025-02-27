@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MITA BANK</h1>
+    ------------------------------------------------------------ <br><br>
+    Digite o saldo atual da sua conta bancaria: <input id="ipt_saldo">
+    <button onclick="analise()">Verificar finanças</button><br><br>
+    <u id="text"></u>
+</body>
+</html>
+<script>
+    function analise() {
+        var saldo = ipt_saldo.value
+        text.innerHTML = ''
+        if (saldo == 0) {
+            text.innerHTML = `Conta zerada`
+        }else {  
+        if (saldo < 0) {
+            text.innerHTML = `Está devendo!`
+        }
+        else {
+                text.innerHTML = `Saldo positivo! sorriso`
+        }
+        }
+    }
+</script>

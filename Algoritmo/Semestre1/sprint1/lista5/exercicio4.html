@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<body style="background-color: black; color: beige;">
+    <h1>PARTIU PIZZA</h1>
+    Digite o valor da pizza: <input id="ipt_valor"><br> <br>
+    Digite a quantidade de amigos: <input id="ipt_amigos">
+    <button onclick="divisao()">Rola a pizza?</button><br><br>
+    <u id="text"></u>
+    <u id="text2"></u>
+</body>
+</html>
+<script>
+    function divisao() {
+        var resultado = ipt_valor.value / ipt_amigos.value
+        text.innerHTML = `Cada amigo vai pagar R$${resultado} pela pizza`
+        text2.innerHTML = ""
+        if (resultado > 20) {
+            text2.innerHTML = `Deu ruim! Pizza muito cara! num compensa`
+        }
+    }
+</script>

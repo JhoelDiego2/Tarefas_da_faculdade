@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: beige;">
+    <h1>Canculado os fora da série</h1>
+    <p>os "fora de série" são os alunos com média acima de 9,4
+    </p>
+    <h4>irei te ajudar a calcular se você é um(a) aluno(a) fora da série</h4>
+    Digite a sua 1º nota : <input id="ipt_nota1"><br><br>
+    Digite a sua 2º nota : <input id="ipt_nota2"><br><br>
+    Digite a sua 3º nota : <input id="ipt_nota3">
+    <button onclick="media()">Analisar desempenho</button>
+    <i id="text"></i> <br><br>
+    <b><i id="text2"></i></b>
+</body>
+</html>
+<script>
+    function media() {
+        var ax_media = (Number(ipt_nota1.value) + Number(ipt_nota2.value) + Number(ipt_nota3.value)) / 3
+        text.innerHTML = `Sua média foi de ${ax_media}`
+        text2.innerHTML = ""
+        if (ax_media > 9.4) {
+            text2.innerHTML = "Parabéns, você é fora de série"
+        }
+    }
+</script>

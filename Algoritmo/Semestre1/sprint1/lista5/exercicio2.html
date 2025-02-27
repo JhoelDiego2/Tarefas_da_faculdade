@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: beige;">
+    <h1>Refrigerantes por ano!</h1>
+    Digite a quantidade de latinhas de refrigerantes consumidas por dia: <input id="ipt_diario">
+    <button onclick="total()">Quantos refris?</button> <br><br>
+    <u id="text"></u><br><br>
+    <u id="text2"></u>
+</body>
+</html>
+<script>
+    function total() {
+        var total_ano = ipt_diario.value * 365
+        text.innerHTML = `Você consome ${total_ano} latinhas por ano`
+        if (total_ano >= 500) { 
+            text2.innerHTML = `"Cuidado com a diabetes! 💀"  `
+        }
+    }
+
+</script>

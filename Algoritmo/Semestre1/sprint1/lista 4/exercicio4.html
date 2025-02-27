@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza para todos</title>
+</head>
+<body style="background-color: bisque;">
+    <h1>Pizza para todos</h1>
+    <p>Todo mundo adora pizza! Existem para todos os gostos!</p>
+    <h3>Melhor ainda para dividir com todos, iremos te ajudar nisso!</h3>
+    Valor da pizza: <input id="valor_pizza"><br><br>
+    Quantidade de pesssoas para dividir: <input id="quantidade">
+    <button onclick="dividir()">#lovePizza</button>
+    <u id="valores"></u>
+</body>
+</html>
+<script>
+    function dividir() {
+        var total = (Number(valor_pizza.value) + (valor_pizza.value * 0.1) ) / quantidade.value
+    valores.innerHTML += `Cada amigo vai colaborar com R$ ${total} para a pizza de ${valor_pizza.value * 1.1}`
+    }
+</script>

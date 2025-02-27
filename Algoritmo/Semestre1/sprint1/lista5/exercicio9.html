@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <H1>NETFLIX</H1>
+    ----------------------------------------------------------- <br><br>
+    <h4>Calculadora para saber quanto tempo você já gastou assistindo streaming </h4> <br>
+    infome a ultima série que você assistiu: <input id="ipt_serie"><br><br>
+    Informe o toal de episódiiios que voê já assistiu da série : <input id="ipt_episodios">
+    <button onclick="Multiplicacao()">Verificar nível</button> <br><br>
+    ----------------------------------------------------------- <br><br> 
+    <i id="text"></i>
+    <div id="text1"></div>
+</html>
+<script>
+    function Multiplicacao() {
+        var total = ipt_episodios.value * 22
+        text.innerHTML = `Vejo que você gosta da série ${ipt_serie.value}`
+        text1.innerHTML = ""
+        if (total > 30) {
+            text1.innerHTML = `Uau, você realmente gosta dessa série!`
+        }
+    }
+
+</script>

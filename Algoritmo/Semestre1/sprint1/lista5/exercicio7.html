@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: beige;">
+    <h1>Banco XPTO</h1>
+    ----------------------------------------------------------- <br><br>
+    Digite o saldo da sua conta: <input id="ipt_saldo"><br><br><br>
+    Digite o valor do débito: <input id="ipt_debito">
+    <button onclick="analise()">Analisar conta</button> <br><br>
+    
+    <div id="text"></div>
+</body>
+</html>
+<script>
+    function analise() {
+        var resultado = ipt_saldo.value - ipt_debito.value
+        text.innerHTML = `O saldo atual da conta corrente é ${resultado}`
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: beige;">
+    <h1>Algoritmolândia </h1>
+    <p>Na cidade de Algoritmolândia a luz custa R$ 0,85 por KWh</p>
+    Digite a quantidade de KWh consumida por mês: <input id="ipt_consumo">
+    <button onclick="consumo()">Calcular conta de luz</button> <br><br>
+    <u id="text"></u>
+    <u id="text2"></u>
+</body>
+</html>
+<script>
+    function consumo() {
+        var fatura = ipt_consumo.value * 0.85
+        var desconto = fatura * 0.9
+        text.innerHTML = `O valor da conta a ser paga será de ${fatura}`
+        text2.innerHTML = ""
+        if (ipt_consumo.value < 100) {
+            text2.innerHTML = `mas com o desconto de 10% ficará ${desconto}`
+        }
+    }
+
+</script>

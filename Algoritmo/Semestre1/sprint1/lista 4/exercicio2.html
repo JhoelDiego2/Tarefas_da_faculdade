@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: blanchedalmond;">
+    <h1>Eleições</h1>
+    <p>Calculadora para saber a porcentagem que cada candidato teve</p>
+    Digite a quantidade de voto do candidato A: <input id="candidatoA"><br><br>
+    Digite a quantidade de voto do candidato B: <input id="candidatoB"><br><br>
+    Digite a quantidade de votos brancos: <input id="brancos"><br><br>
+    Digite a quantidade de votos nulos: <input id="nulos"><br><br>
+    <button onclick="Resultado()">Resultado da Eleição</button><br><br>
+    <div id="resultados"></div><br>
+</body>
+</html>
+<script>
+    function Resultado() {
+        var total = Number(candidatoA.value) + Number(candidatoB.value) + Number(brancos.value) + Number(nulos.value);
+        var canA = candidatoA.value / total * 100 ;
+        var canB = candidatoB.value / total * 100 ;
+        var invalidos = (Number(brancos.value) + Number(nulos.value)) / total * 100 ;
+
+        resultados.innerHTML = `Total de votos: ${total} <br> <br>
+        Candidato A: ${canA}% (${candidatoA.value}) <br><br>
+        Candidato B: ${canB}% (${candidatoB.value}) <br><br>
+        Invalidos ${invalidos}% (${Number(brancos.value) + Number(nulos.value)})`
+    }
+</script>
