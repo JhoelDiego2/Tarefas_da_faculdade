@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tio Patinhas</h1>
+    <p>Tio Patinhas está ensinando seus netos a guardar dinheiro</p>
+    <div style="color: blue">
+        Total guardado no cofrinho: R$<span id="text_total"></span><br><br>
+        Depósitos efetuados: <span id="text_depositos"></span><br><br>
+        Retiradas efetuadas: <span id="text_retiradas"></span><br>
+    </div> <br><br>
+    <button onclick="depositar1()">Depositar 0,50</button>
+    <button onclick="depositar2()">Depositar 2,00</button>
+    <button onclick="retirar()">Retirar 0,50</button>
+    <button onclick="retirartudo()">Retirar</button>
+</body>
+</html>
+<script>
+    var total = 0.00
+    var depositos = 0.00
+    var retiradas = 0.00
+    text_total.innerHTML = `${total}`
+    text_depositos.innerHTML = `${depositos}`
+    text_retiradas.innerHTML = `${retiradas}`
+    
+    function depositar1() {
+        total = total + 0.50
+        text_total.innerHTML = `${total}`
+        depositos = depositos + 1
+        text_depositos.innerHTML = `${depositos}`
+    }
+    function depositar2() {
+        total = total + 2.00
+        text_total.innerHTML = `${total}`
+        depositos = depositos + 1
+        text_depositos.innerHTML = `${depositos}`
+    }
+    function retirar() {
+        total = total - 0.50
+        text_total.innerHTML = `${total}`
+        retiradas = retiradas + 1
+        text_retiradas.innerHTML = `${retiradas}`
+    }
+    function retirartudo() {
+        total = total - total
+        text_total.innerHTML = `${total}`
+        retiradas = retiradas + 1
+        text_retiradas.innerHTML = `${retiradas}`
+    }
+
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o valor a ser depositado/retirado: <input id="ipt_valor">
+    <button onclick="somar()">Depositar</button>
+    <button onclick="subtrair()">Retirar</button>
+</body>
+</html>
+<script>
+    var total = 0
+    function somar() {
+        var valor = Number(ipt_valor.value)
+        total = total + valor
+        alert(`Depósito de R$${valor} efetuado! Saldo atual: R$${total} `)
+    }
+    function subtrair() {
+        var valor = Number(ipt_valor.value)
+        total = total - valor
+        alert(`Depósito de R$${valor} efetuado! Saldo atual: R$${total} `)
+    }
+</script>
