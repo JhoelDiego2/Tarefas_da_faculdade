@@ -1,0 +1,57 @@
+<!--
+14. Crie um programa que:  
+
+a) Solicite o valor a ser depositado/retirado pelo usuário 
+
+b) Tenha os botões “Depositar” e “Retirar”. Ao clicar em algum deles, exibe um alerta com uma das mensagens abaixo, de acordo com o botão que foi clicado:  
+
+   - Depósito de R$X efetuado! Saldo atual: R$Y 
+
+   - Retirada de R$X efetuada! Saldo atual: R$Y 
+
+c) Tenha o botão "encerrar" que quando clicado exibirá:
+
+Total de depósitos realizados: Qtde: 999  Valor Total: 999999
+Total de retiradas realizadas: Qtde: 999  Valor Total: 999999
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o valor a ser depositado/retirado [R$]: <input id="ipt_valor">
+    <button onclick="depositar()">Depositar </button>
+    <button onclick="retirar()">Retirar</button>
+    <button onclick="encerrar()">Encerrar</button>
+</body>
+</html>
+<script>
+    var saldo = 0;
+    var depositos = 0;
+    var retiradas = 0 ;
+    var total_dep = 0
+    var total_ret = 0
+    function depositar() {
+        var valor = Number(ipt_valor.value);
+        saldo = saldo + valor ;
+        depositos = depositos + 1;
+        total_dep = total_dep + valor
+        alert(`Depósito de R$${valor} efetuado! Saldo atual: R$${saldo}`)
+    }
+    function retirar() {
+        var valor = Number(ipt_valor.value);
+        saldo = saldo - valor ;
+        retiradas = retiradas + 1;
+        total_ret = total_ret + valor
+        alert(`Retirada de R$${valor} efetuado! Saldo atual: R$${saldo}`)
+    }
+    function encerrar() {
+        alert(`Total de depósitos realizados: Qtde: ${depositos}  Valor Total: ${total_dep} 
+        Total de retiradas realizadas: Qtde: ${retiradas}  Valor Total: ${total_ret}`)
+    }
+
+</script>

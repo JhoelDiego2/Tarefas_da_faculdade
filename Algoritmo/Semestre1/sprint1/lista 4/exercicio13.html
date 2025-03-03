@@ -1,0 +1,33 @@
+<!--
+13. Crie um programa que:  
+
+a) Tenha os botões “Receber 100” e “Pagar 50”.  
+
+b) Ao clicar em “Receber 100”, atualize o saldo do usuário e exiba a mensagem “Transferência de R$100 recebida! Saldo atual: R$Y”. 
+
+c) Ao clicar em “Pagar 50”, atualize o saldo do usuário e exiba a mensagem “Pagamento de R$50 efetuado! Saldo atual: R$Y”. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="receber()">Receber 100 </button>
+    <button onclick="pagar()">Pagar 50 </button>
+    <div id="text"></div>
+</body>
+</html>
+<script>
+    var saldo = 0
+    function receber() {
+        saldo = saldo + 100
+        text.innerHTML += `Transferência de R$100 recebida! Saldo atual: R$${saldo}<br>`
+    }
+    function pagar() {
+        saldo = saldo - 50
+        text.innerHTML += `Pagamento de R$50 efetuado! Saldo atual: R$${saldo}<br>`
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Bart Simpson </h1>
+    <button onclick="esquerda()"> Mover p/ Esquerda</button>
+    <button onclick="direita()"> Mover p/ Direita</button>
+    Quantos pixels: <input id="ipt_pixels"> <br><br><br><br><br><br>
+    <img id="bart" src="https://artpoin.com/wp-content/uploads/2024/06/artpoin-os-simpsons-personagens53-724x1024.png"  width="200"  margin-left="0"   alt="bart">
+</body>
+</html>
+<script>
+    var pixel = 0
+    function esquerda() {
+        var movimento = Number(ipt_pixels.value)
+        pixel = pixel - movimento
+        bart.style.marginLeft = pixel + "px"
+    }
+    function direita() {
+        var movimento = Number(ipt_pixels.value)
+        pixel = pixel + movimento
+        bart.style.marginLeft = pixel + "px"
+    }
+</script>

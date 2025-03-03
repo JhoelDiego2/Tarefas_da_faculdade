@@ -15,8 +15,6 @@ Manter um registro do meu aprendizado, ajudando na minha organização e ter o r
 Sinta-se à vontade para explorar e contribuir! 😃
 
 ## 🤖 Linguagens e tecnologias que estou aprendendo na faculdade
-
-<br>
 <img 
     align="left" 
     alt="HTML"

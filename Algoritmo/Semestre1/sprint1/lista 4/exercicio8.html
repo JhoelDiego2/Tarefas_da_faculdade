@@ -6,14 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="https://th.bing.com/th/id/R.616aef591b03d05f804c377f16111706?rik=Jh8bZqY%2fPoJ7LA&pid=ImgRaw&r=0" width="100" alt="freza"> <br>
     <button onclick="aumentar()">Aumentar a largura</button>
-    <button onclick="reduzir()">Reduzir a largura</button>
+    <button onclick="reduzir()">Reduzir a largura</button> <br><br><br>
+    <img id="freza" src="https://th.bing.com/th/id/R.616aef591b03d05f804c377f16111706?rik=Jh8bZqY%2fPoJ7LA&pid=ImgRaw&r=0" width="100"> <br>
 </body>
 </html>
 <script>
-    var largura = Number(width.value) - 10px
+    var largura = 100
     function aumentar() {
-    width.style.largura
+        largura += 10
+        freza.style.width = largura + "px"
+    }
+    function reduzir() {
+        largura -= 10
+        freza.style.width = largura + "px"
     }
 </script>
