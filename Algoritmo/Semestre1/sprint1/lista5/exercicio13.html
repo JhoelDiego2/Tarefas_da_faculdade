@@ -1,0 +1,33 @@
+<!-- 13. Crie um programa o qual:  
+
+a) Solicite 2 notas de um aluno  
+
+b) Ao clicar em "Verificar situação", calcule sua média e...  
+
+c) Caso a média seja a partir de 6, exiba um alert com "Parabéns, aprovado!"  
+
+d) Caso a média seja menor que 6, exiba um alert com "Tente outra vez..."  
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a nota 1: <input id="nota1">
+    Digite a nota 2: <input id="nota2">
+    <button onclick="media()">Verificar situação</button>
+</body>
+</html>
+<script>
+    function media() {
+        var resultado = nota1.value * nota2.value / 2
+        if (resultado >= 6) {
+            alert (`Parabéns, aprovado!`)
+        } else {
+            alert (`Tente outra vez...`)
+        }
+    }
+</script>

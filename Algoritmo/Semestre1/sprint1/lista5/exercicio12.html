@@ -1,3 +1,14 @@
+<!-- 12. Crie um programa o qual:  
+
+a) Solicite o peso total num elevador  
+
+b) Ao clicar num botão "Ligar elevador"...  
+
+c) Caso o peso seja menor que 500, exiba um alert com a frase "Elevador vai se mover"  
+
+d) Caso o peso seja a partir de 500, exiba um alert com "Alguém precisa descer do elevador"  
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +19,16 @@
 <body>
     <h1>ELAVADOR</h1>
     Digite o peso total no elevador: <input id="ipt_pesototal">
-    <button></button>
+    <button onclick="iniciar()">Ligar elevador</button>
 </body>
 </html>
+<script>
+    function iniciar() {
+        var total = ipt_pesototal.value
+        if (total < 500) {
+            alert( "Elevador vai se mover" )
+        } else{
+            alert ("Alguém precisa descer do elevador"  )
+        }
+    }
+</script>
