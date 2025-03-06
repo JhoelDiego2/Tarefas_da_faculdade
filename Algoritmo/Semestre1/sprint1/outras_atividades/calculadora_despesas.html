@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Continuada 1</title>
+</head>
+<body>
+    <h2>Calculadora de despesas fixas dos irmãos Florinda e Chico</h2>
+    <div>
+        Informe a quantidade consumida de energia [kWh]: <br> <input id="ipt_quant_consumida_energia"><br><br>
+        Informe a bandeira tarifária de energia [vermelha/amarela/verde]: <br> <input id="ipt_bandeira_energia" type="text"><br><br>
+        Informe a quantidade de MB(megabyte) do plano de internet: <br> <input id="ipt_quant_mg"><br><br>
+        Informe se o senhor(a) possui uma linha telefonica vinculada ao seu plano de internet [sim/não]: <br> <input id="ipt_linha_telefonica" type="text">
+    </div><br><br>
+    <div>
+        <button onclick="calculo_despesas_fixas()">Calcular Despesas Fixas</button>
+    </div><br><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function calculo_despesas_fixas() {
+        // declarando variaveis locais para conter cada informação que o usurio digite e declara se é numero ou não
+        var consumo_energia = Number(ipt_quant_consumida_energia.value);
+        var cor_bandeira = ipt_bandeira_energia.value;
+        var quantidade_megabyte = Number(ipt_quant_mg.value);
+        var linha_telefonica = ipt_linha_telefonica.value;
+        // variaveis loacis para armazenar as contas que serão feitas depois dependendo de cada situação
+        var preco_da_energia = 0;
+        var total_conta_energia = 0;
+        var valor_base_plano_internet = 0
+        var valor_total_internet_linha_telefonica = 0
+        // utilizando o if e o else porque cada cor de bandeira tem uma preço de energia diferente 
+        if (cor_bandeira == "verde") {
+            preco_da_energia = 0.75
+        } else {
+            if (cor_bandeira == "amarela") {
+                preco_da_energia = 0.90
+            } else {
+                if (cor_bandeira == "vermelha") {
+                    preco_da_energia = 1
+                }
+            }
+        }
+        // utilização de if caso o consumo de energia for menor ou igual a 50 o usurario terá um descconto no preço base da energia
+        if (consumo_energia <= 50) {
+            preco_da_energia = preco_da_energia * 0.90
+        }
+        // aqui será somado o consumo de energia e o preço da energia calculado previamente dependendo de cada situação
+        total_conta_energia = consumo_energia * preco_da_energia
+        // calculo do valor base do plano de intenter do usuario 
+        valor_base_plano_internet = 0.8 * quantidade_megabyte
+        // utilização de if e else  caso o usuario tenha ou não tenha uma linha de telefone, podendo conceder desconto ou acrecimo a depender da resposta
+        if(linha_telefonica == 'sim') {
+            valor_total_internet_linha_telefonica = valor_base_plano_internet * 1.35
+        }else{
+             valor_total_internet_linha_telefonica = valor_base_plano_internet * 0.925
+        }
+        // exxibindo os valores na tela do usuario
+        texto_tela.innerHTML = `
+        Com o consumo de ${consumo_energia} kWh na bandeira ${cor_bandeira}, a conta de energia totaliza R$ ${total_conta_energia}. 
+        Com o consumo de ${valor_base_plano_internet} MB de internet, o valor do plano de internet/telefone totaliza R$ ${valor_total_internet_linha_telefonica}. 
+        Gasto total de despesas mensal: R$${valor_total_internet_linha_telefonica + total_conta_energia} . `
+    }
+</script>

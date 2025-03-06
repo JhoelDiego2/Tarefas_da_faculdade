@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio3</title>
+</head>
+<body>
+    <h1> <b>Jogo da sorte</b></h1><br>
+    <b>Entre com o valor para brincar: <input id="ipt_valor"></b> <br><br>
+    <button onclick="iniciar()">Inciar</button>
+    <button onclick="ganhou()">Ganhou</button>
+    <button onclick="perdeu()">Perdeu</button>
+    <button onclick="terminhar()">Terminhar</button>
+    <div id="mensagens"></div>
+</body>
+</html>
+<script>
+    var contador_ganhadas = 0; 
+    var contador_perdidas = 0;
+    var total_balas = 0; 
+    var valor_inicial = 0; 
+    function iniciar() {
+        valor_inicial = Number(ipt_valor.value); 
+        total_balas = total_balas + valor_inicial; 
+        mensagens.innerHTML += `Vamos começar a brincadeira, seu saldo é ${total_balas} balas <br>`;
+    }
+    function ganhou() {
+        total_balas = total_balas + 5;
+        contador_ganhadas = contador_ganhadas + 1
+        mensagens.innerHTML += `”Parabéns, nessa rodada você ganhou 5 balas e seu saldo é ${total_balas} balas <br>`;
+    }
+    function perdeu() {
+        total_balas = total_balas - 2;
+        contador_perdidas = contador_perdidas + 1;
+        mensagens.innerHTML += `Vixi, essa rodada você perdeu 2 balas e seu saldo é ${total_balas} balas <br>`;
+    }
+    function terminhar() {
+        var total_rodadas = contador_ganhadas + contador_perdidas; 
+        var relacao_comeco_final = valor_inicial / total_balas * 100; 
+        mensagens.innerHTML = `Você começou com ${valor_inicial} balas, e depois de ${total_rodadas} rodas, onde você ganhou ${contador_ganhadas} rodadas, perdeu ${contador_perdidas} rodadas 
+                               <br>e finalizou com ${total_balas} balas, tendo uma diferença de ${relacao_comeco_final}% em relação ao valor inicial.<br>`;
+        if (valor_inicial > total_balas) {
+            mensagens.innerHTML += `Hoje não é o seu dia de sorte!!! você terminou com menos balas que no início do jogo.`;
+        } else {
+            if (valor_inicial = total_balas) {
+                mensagens.innerHTML += `Tudo bem, valeu a brincadeira!!! você está com a mesma quantidade de balas que no início do jogo`;
+            } else {
+                mensagens.innerHTML += `"Parabéns, hoje é o seu dia de sorte!!! você terminou com mais balas que no início do jogo.`;
+            }
+            contador_ganhadas = 0; 
+            contador_perdidas = 0;
+            total_balas = 0; 
+            valor_inicial = 0;
+        }
+    }
+</script>
