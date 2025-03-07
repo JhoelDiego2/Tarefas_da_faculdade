@@ -5,11 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Financiera</title>
 </head>
-<body style="background-color: rgb(158, 45, 45);">
+<body >
+        <img src="file:///C:/Users/Pichau/Downloads/Projeto%20Criador%20de%20logotipo-8%20(2).png" width="300" alt="">
         <div>
-            <H1> BERRYSAFE</H1>
-            <h3>Calculador para saber os possiveis ganhos com e sem o nosso sensor da umidade do solo</h3>
-    </div>
-    
+            <h2><b style="color: rgb(158, 21, 21);">Simulador Financeiro</b></h2>
+            <p style="color: rgb(197, 76, 76); ">Bem-vindo ao Simulador Financeiro! Agora você pode visualizar como o uso de sensores
+                de umidade do solo <br> pode impactar diretamente as finanças do seu cultivo de morangos.
+                Vamos te guiar em uma simulação simples,<br> onde você pode inserir dados reais ou estimados 
+                de sua propriedade.</p>
+        </div>
+        <div style="background-color: white;">
+            Informe a quantidade de hectares de morangos cultivados durante uma safra*: <br><input id="ipt_quantidade_hectares"><br><br>
+            Infome a quantidade de morangos cultivados durante uma safra[Kg]*: <br><input id="ipt_quantidade_morangos"><br><br>
+            Infome o valor que você vende o morango po quilo[R$]*: <br><input id="ipt_valor_morango"><br><br>
+            <div> <button onclick="calcular_receita()" style=" background-color: rgb(158, 21, 21);color: white;" >CALCULAR RECEITA TOTAL ESTIMADO</button></div>
+        </div><br>
+        <div style="background-color: white;"> 
+            Informe o gasto com insumos(adubo, fertilizantes, defensivos agrículas)*: <br> <input id="ipt_insumos"><br><br>
+            Informe o gasto com mão de obra*: <br><input id="ipt_mao_obra"><br><br>
+            Informe o gasto com àgua com irrigação em sua plantação*: <br><input id="ipt_valor_agua"><br><br>
+            Informe o gasto com manutenção de equipamentos*: <br><input id="ipt_manutencao"> <br><br>
+            Informe o gasto com outros custos operacionais*: <br><input id="ipt_adicionais"><br><br>
+            <button onclick="calcular_receita_lucro()" style=" background-color: rgb(158, 21, 21);color: white;">CALCULAR RECEITA TOTAL E LUCRO ESTIMADOS</button>
+        </div>
+        <div id="texto"></div>
 </body>
 </html>
+<script>
+    var quantidade_hectares = 0
+    var quantidade_morangos = 0
+    var preco_morango = 0
+    var receita_com_sensores_safra = 0
+    var receita_estresse_hidrico = 0
+    var receita_encharcamento = 0
+    function prencher_variaveis_globais() {
+        quantidade_hectares = ipt_quantidade_hectares.value;
+        quantidade_morangos = ipt_quantidade_morangos.value;
+        preco_morango = ipt_valor_morango.value;
+        receita_com_sensores_safra = quantidade_morangos * quantidade_hectares* 1000 * preco_morango; 
+        receita_estresse_hidrico = receita_com_sensores_safra * 0.7
+        receita_encharcamento = receita_com_sensores_safra * 0.75
+    }
+    function calcular_receita() {
+        prencher_variaveis_globais()
+        texto.innerHTML = `
+        ____________________________________________________________________________________<br>
+        <span style="color: red"><b>SEM USAR O NOSSA GESTÃO DE MONITORAMNETO DA UMIDADE DO SOLO CAPACITIVO: </b><br><br>
+        <b>CASO A SAFRA SOFRA DE ESTRESSE HIDRICO: </b><br><br>
+        Estimativa de receita: R$${receita_estresse_hidrico}<br>
+        Perda monetaria: R$${receita_com_sensores_safra - receita_estresse_hidrico}<br><br>
+        <b>CASO O CULTIVO SOFRA DE ENCHARCAMENTO:</b><br><br>
+        Estimativa de receita: R$${receita_encharcamento}<br>
+        Perda monetaria: R$${receita_com_sensores_safra - receita_encharcamento}<br></span>
+        _____________________________________________________________________________________<br>
+        <span style="color: green"><b>COM O NOSSA GESTÃO DE MONITORAMENTO DA UMIDADE DO SOLO CAPACITIVO:</b> <br><br>
+        Estimativa de receita: R$${receita_com_sensores_safra}</span>`    
+        }
+    function calcular_receita_lucro() {
+        prencher_variaveis_globais()
+        var insumos = Number(ipt_insumos.value)
+        var mao_de_obra = Number(ipt_mao_obra.value)
+        var gasto_agua = Number(ipt_valor_agua.value)
+        var manutencao = Number(ipt_manutencao.value)
+        var adicionais =  Number(ipt_adicionais.value)
+        var total_gasto = insumos + mao_de_obra + gasto_agua + manutencao + adicionais
+        texto.innerHTML  = `
+        ____________________________________________________________________________________<br>
+        <span style="color: red"><b>SEM USAR O NOSSA GESTÃO DE MONITORAMNETO DA UMIDADE DO SOLO CAPACITIVO: </b><br><br>
+        <b>CASO A SAFRA SOFRA DE ESTRESSE HIDRICO: </b><br><br>
+        Estimativa de receita: R$${receita_estresse_hidrico}<br>
+        Perda monetaria: R$${receita_com_sensores_safra - receita_estresse_hidrico}<br>
+        lucro estimado: R$${receita_estresse_hidrico - total_gasto}<br><br>
+        <b>CASO O CULTIVO SOFRA DE ENCHARCAMENTO:</b><br><br>
+        Estimativa de receita: R$${receita_encharcamento}<br>
+        Perda monetaria: R$${receita_com_sensores_safra - receita_encharcamento}<br>
+        Lucro estimado: R$${receita_encharcamento - total_gasto}</span><br>
+       _____________________________________________________________________________________<br>
+        <span style="color: green"><b>COM O NOSSA GESTÃO DE MONITORAMENTO DA UMIDADE DO SOLO CAPACITIVO:</b> <br><br>
+        Estimativa de receita: R$${receita_com_sensores_safra}<br>
+        Economia com a agua: R$${gasto_agua * 0.2}<br>
+        Lucro estimado: R$${total_gasto - gasto_agua * 0.2}<br>
+        Redução de perdas: R$${receita_com_sensores_safra - receita_estresse_hidrico} até R$${receita_com_sensores_safra - receita_encharcamento} </span>`
+        
+        }
+</script>
