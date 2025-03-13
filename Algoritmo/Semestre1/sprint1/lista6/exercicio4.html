@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>netflix</h1>
+    <p> Netflix é uma das plataformas que mais consomem e transferem dados em alguns países –
+        o que cria alguns horários críticos. Entre 19h e 21h, por exemplo, é comum que ocorram
+        instabilidades na plataforma, porque é o período em que mais há gente assistindo ao 
+        conteúdo.  </p>
+    Digite a quantidade de horas por dia que você consome no app Netflix: <br>
+    <input id="ipt_horas">
+    <button onclick="recomendacao()">Ver recomendação</button><br><br>
+    <div id="texto"></div>
+</body>
+</html>
+<script>
+    function recomendacao() {
+        if (ipt_horas.value>=19 && ipt_horas.value <=211) {
+            texto.innerHTML = `Não é recomendável que você assista sua série favorita no horário ${ipt_horas.value} hrs!`
+        } else {
+            texto.innerHTML = `O horário ${ipt_horas.value}hrs é adequado para assistir sua série favorita!`
+        }
+    }
+</script>

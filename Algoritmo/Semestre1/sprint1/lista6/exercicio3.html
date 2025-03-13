@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Avaliador de aluno</h1>
+    Digite a nota do aluno: <br><input id="ipt_nota"><br><br>
+    <button onclick="avaliar()">Avaliar aluno</button>
+</body>
+</html>
+<script>
+    function avaliar() {
+        if (ipt_nota.value>=0 && ipt_nota.value <= 10){
+            alert("Nota válida!" )
+        } else {
+            alert("Onde já se viu nota menor que 0 e maior que 10?!"  )
+        }
+    }
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Temperatura ideal</h1>
+    Digite a temperatura atual: <br><input id="ipt_temp"><br><br>
+    <button onclick="analise()">Ver situação</button>
+</body>
+</html>
+<script>
+    function analise() {
+        if (ipt_temp.value >= 21 && ipt_temp.value <= 24) {
+            alert("Temperatura confortável :D")
+        } else {
+            alert("Temperatura DESCONFORTÁVEL :C")
+        }
+    }
+</script>

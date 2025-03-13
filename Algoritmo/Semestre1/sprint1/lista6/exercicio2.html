@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ajuda no covid19</h1>
+    Digite a sua renda: <br><input id="ipt_renda"><br><br>
+    Digite o total da sua renda familiar: <br><input id="ipt_renda_familiar"><br><br>
+    <button onclick="analise()">Verificar ajuda</button>
+</body>
+</html>
+<script>
+    function analise() {
+        if (ipt_renda.value <1050 && ipt_renda_familiar.value <2100) {
+            alert("Você terá direito!")
+        } else {
+            alert( "Você NÃO terá direito")
+        }
+    }
+</script>

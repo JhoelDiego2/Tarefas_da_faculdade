@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CARTÃO FIDELIDADE METRÕ SÃO PAULO </h1>
+    informe a quantidade de passagens que deseja adquirir: <br><input id="ipt_quant_pass" >
+    <button onclick="comprar()">Comprar</button>
+
+
+</body>
+</html>
+<script>
+    function comprar() {
+        var passagens = ipt_quant_pass.value
+        var valor_passagens = 4.4
+        if (passagens >= 8 && passagens <=50) {
+            if (passagens >= 8 && passagens<= 19) {
+                valor_passagens = valor_passagens * 0.97
+            }
+            if (passagens >=20 && passagens <= 49) {
+                valor_passagens = valor_passagens * 0.95
+            }
+            if (passagens = 50) {
+                valor_passagens = valor_passagens * 0.93
+            }
+        } else {
+            alert("Quantidade inválida para o Fidelidade!"  )
+        }
+    }
+</script>

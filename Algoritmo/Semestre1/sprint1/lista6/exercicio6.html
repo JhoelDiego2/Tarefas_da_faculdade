@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+          <h1>Operador &&</h1>
+        <div >  
+            Digite a media do aluno: <br><input id="ipt_media"><br><br>
+            Digite a frecuencia do aluno: <br><input id="ipt_frequencia"><br><br>
+            <button onclick="analisar()">Analisar Aluno</button>
+            <div id="texto_tela"></div>
+        </div>
+
+</body>
+</html>
+<script>
+    function analisar() {
+        if (ipt_media.value>= 6 && ipt_frequencia.value>= 75) {
+            texto_tela.innerHTML = 'PARABENS ALUNO APROVADO'
+        } else {
+            texto_tela.innerHTML = 'TENTAR NOVAMENTE'
+            
+        }
+    }
+</script>
