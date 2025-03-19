@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+<body>
+    <h1>Tv está no precinho?</h1>
+    Digite a marca da TV[Samsung/LG/Mondial/Britânia]: <br><input id="ipt_marca"><br><br>
+    Digite o preço da TV: <br><input id="ipt_preco"><br><br>
+    <button onclick="analisar()">Analisar compra</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var preco = ipt_preco.value
+        var marca = ipt_marca.value
+        if (preco < 800 || preco > 2000) {
+            texto_tela.innerHTML = `TV fora da faixa de preço`
+            if (preco < 800) {
+                texto_tela.innerHTML += `<br>Preço baixo demais!`
+            // abaixo não coloquei > 2000, já que uma vez que o numeor entra no primeiro if, então só pode ser maior que 2000
+            }else{
+                texto_tela.innerHTML += `<br>TV cara demais, infelizmente`
+            }
+        } else {
+            if ((preco >= 800 && preco <= 2000) && (marca == 'Mondial' || marca == 'Britânia')) {
+            texto_tela.innerHTML = `Na faixa de preço, porém marca não confiável`
+            } else {
+                if ((preco >= 800 && preco <= 2000) && (marca == 'LG' || marca == 'Samsung')) {
+                texto_tela.innerHTML = `Essa TV pode entrar na sua lista!`
+                } else {
+                    texto_tela.innerHTML = 'Opa, algo deu errado. Porfavor revisar o campo da marca.'
+                }
+            }
+        }
+    }
+</script>

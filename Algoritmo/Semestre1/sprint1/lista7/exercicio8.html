@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    <h1>Calculadora de estagio SPTech de Augusto</h1>
+    Digite o nome da empresa: <br><input id="ipt_nome"><br><br>
+    Digite o valor da bolsa da empresa [R$]: <br><input id="ipt_bolsa"><br><br>
+    Digite o valor do VR da empresa [R$]: <br><input id="ipt_VR"><br><br>
+    Digite o tempo de deslocamento da empresa [minutos]: <br><input id="ipt_distancia"><br><br>
+    <button onclick="analisar()">É preferida?</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        if (ipt_bolsa.value >= 1800 || ipt_VR.value >= 20 || ipt_distancia <= 30) {
+        texto_tela.innerHTML = `A empresa ${ipt_nome.value} é uma de suas preferências`
+    } else {
+        texto_tela.innerHTML = `A empresa ${ipt_nome.value} está fora da sua lista`
+    }
+    }
+</script>

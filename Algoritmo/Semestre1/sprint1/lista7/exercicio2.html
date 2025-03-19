@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+
+<body>
+    <h1>Faculdade Mentes Brilhantes</h1>
+    Digite a nota do ENEM do aluno: <br><input id="ipt_nota_enem"><br><br>
+    Digite a nota do vestibular interno do aluno: <br> <input type="ipt_nota_interna"><br><br>
+    <button onclick="avaliar()">Avaliação</button>
+</body>
+
+</html>
+<script>
+    function avaliar() {
+        if (ipt_nota_enem.value >= 800 || ipt_nota_interna.value >= 700) {
+            alert("Parabéns! Aprovado")
+        } else {
+            alert("Tente semestre que vem!")
+        }
+    }
+</script>

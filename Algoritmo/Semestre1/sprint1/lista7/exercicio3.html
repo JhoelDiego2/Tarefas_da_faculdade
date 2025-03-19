@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+
+<body>
+    <h1>Governo do Brasil</h1>
+    Digite o valor da renda indivisual do usúario: <br><input id="ipt_renda_individual"><br><br>
+    Digite o valor da renda familiar do usúario: <br><input id="ipt_renda_familiar"><br><br>
+    <button onclick="analisar()">Terei o beneficio</button><br>
+    <div id="texto_tela"></div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        if (ipt_renda_individual.value <= 2000 || ipt_renda_familiar.value <= 3000) {
+            texto_tela.innerHTML = `Você terá direito ao auxilio`
+        } else {
+            texto_tela.innerHTML = `Sem direito ao auxilio`
+        }
+    }
+</script>
