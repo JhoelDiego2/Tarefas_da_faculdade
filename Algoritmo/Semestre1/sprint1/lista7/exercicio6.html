@@ -19,14 +19,18 @@
 <script>
     function Calcular() {
         var transporte = ipt_transporte.value
-        if (transporte == 'Carro' || transporte == 'Uber') {
-            alert("Tá tranquilo")
-        } else {
-            if (transporte == 'Metrô' || transporte == 'Ônibus') {
-                alert("Um pouco cansaddo")
+        if (distancia > 0 && (transporte == 'Carro' || transporte == 'Metrô' || transporte == 'Ônibus' || transporte == 'Bicicleta')) {
+            if (transporte == 'Carro' || transporte == 'Uber') {
+                alert("Tá tranquilo")
             } else {
-                alert("Vish...vive cansado")
+                if (transporte == 'Metrô' || transporte == 'Ônibus') {
+                    alert("Um pouco cansaddo")
+                } else {
+                    alert("Vish...vive cansado")
+                }
             }
+        } else{
+            alert(`Opa, algo deu errado. Porfavor verifique os campos inseridos`)
         }
     }
 </script>

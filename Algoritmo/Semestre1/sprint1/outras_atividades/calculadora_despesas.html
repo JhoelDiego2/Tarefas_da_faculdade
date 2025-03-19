@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliação Continuada 1</title>
 </head>
+
 <body>
     <h2>Calculadora de despesas fixas dos irmãos Florinda e Chico</h2>
     <div>
         Informe a quantidade consumida de energia [kWh]: <br> <input id="ipt_quant_consumida_energia"><br><br>
-        Informe a bandeira tarifária de energia [vermelha/amarela/verde]: <br> <input id="ipt_bandeira_energia" type="text"><br><br>
+        Informe a bandeira tarifária de energia [vermelha/amarela/verde]: <br> <input id="ipt_bandeira_energia"
+            type="text"><br><br>
         Informe a quantidade de MB(megabyte) do plano de internet: <br> <input id="ipt_quant_mg"><br><br>
-        Informe se o senhor(a) possui uma linha telefonica vinculada ao seu plano de internet [sim/não]: <br> <input id="ipt_linha_telefonica" type="text">
+        Informe se o senhor(a) possui uma linha telefonica vinculada ao seu plano de internet [sim/não]: <br> <input
+            id="ipt_linha_telefonica" type="text">
     </div><br><br>
     <div>
         <button onclick="calculo_despesas_fixas()">Calcular Despesas Fixas</button>
     </div><br><br>
     <div id="texto_tela"></div>
 </body>
+
 </html>
 <script>
     function calculo_despesas_fixas() {
@@ -52,10 +57,10 @@
         // calculo do valor base do plano de intenter do usuario 
         valor_base_plano_internet = 0.8 * quantidade_megabyte
         // utilização de if e else  caso o usuario tenha ou não tenha uma linha de telefone, podendo conceder desconto ou acrecimo a depender da resposta
-        if(linha_telefonica == 'sim') {
+        if (linha_telefonica == 'sim') {
             valor_total_internet_linha_telefonica = valor_base_plano_internet * 1.35
-        }else{
-             valor_total_internet_linha_telefonica = valor_base_plano_internet * 0.925
+        } else {
+            valor_total_internet_linha_telefonica = valor_base_plano_internet * 0.925
         }
         // exxibindo os valores na tela do usuario
         texto_tela.innerHTML = `

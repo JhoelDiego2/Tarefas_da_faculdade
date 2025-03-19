@@ -21,22 +21,27 @@
     function Calcular() {
         var transporte = ipt_transporte.value
         var distancia = ipt_distancia.value
-        if (distancia <= 10) {
-            if (transporte == 'Carro' || transporte == 'Metrô' || transporte == 'Ônibus') {
-                alert(`Tá thanks...`)
+        if (distancia > 0 && (transporte == 'Carro' || transporte == 'Metrô' || transporte == 'Ônibus' || transporte == 'Bicicleta')) {
+
+            if (distancia <= 10) {
+                if (transporte == 'Carro' || transporte == 'Metrô' || transporte == 'Ônibus') {
+                    alert(`Tá thanks...`)
+                } else {
+                    alert(`É... um pouco cansado...`)
+                }
             } else {
-                alert(`É... um pouco cansado...`)
+                if (transporte == 'Carro') {
+                    alert(`É... um pouco cansado...`)
+                }
+                if (transporte == 'Metrô' || transporte == 'Ônibus') {
+                    alert('Bem cansado')
+                }
+                if (transporte == 'Bicicleta') {
+                    alert(`Vish... tá só o pó...`)
+                }
             }
         } else {
-            if (transporte == 'Carro') {
-                alert(`É... um pouco cansado...`)
-            } 
-            if (transporte == 'Metrô' || transporte == 'Ônibus') {
-                alert('Bem cansado')
-            }
-            if (transporte == 'Bicicleta') {
-                alert(`Vish... tá só o pó...`)
-            }
+            alert(`Opa, algo deu errado. Porfavor verifique os campos inseridos`)
         }
     }
 </script>

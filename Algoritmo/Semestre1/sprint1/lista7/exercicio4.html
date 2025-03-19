@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 4</title>
 </head>
+
 <body>
     <h1>Analise de possibilidade de uma compra parcelada ou a vista</h1>
-    Escolha a forma de pagamento [Dinheiro/Cartão de débito/Cartão de crédito/Boleto]: 
+    Escolha a forma de pagamento [Dinheiro/Cartão de débito/Cartão de crédito/Boleto]:
     <br><input id="ipt_pagamento"><br><br>
     <button onclick="analisar()">Analisar compra</button><br>
     <div id="texto_tela"></div>
 </body>
+
 </html>
 <script>
     function analisar() {
         var pagamento = ipt_pagamento.value
-        if (pagamento == 'Dinheiro' || pagamento == 'Cartão de debito') {
-            texto_tela.innerHTML = `Você terá que pagar a vista`
-        } else {
-            if (pagamento == 'Cartão de crédito' || pagamento == 'Boleto') {
-                texto_tela.innerHTML = "Pagamento poderá ser parcelado"
+        if (pagamento == 'Dinheiro' || pagamento == 'Cartão de debito' || pagamento == 'Cartão de crédito' || pagamento == 'Boleto') {
+
+            if (pagamento == 'Dinheiro' || pagamento == 'Cartão de debito') {
+                texto_tela.innerHTML = `Você terá que pagar a vista`
             } else {
-                
+                if (pagamento == 'Cartão de crédito' || pagamento == 'Boleto') {
+                    texto_tela.innerHTML = "Pagamento poderá ser parcelado"
+                } else {
+
+                }
             }
+        } else {
+            texto_tela, innerHMTL = `Opa, algo deu errado. Porfavor verifique a distancia inserida`
         }
     }
 </script>

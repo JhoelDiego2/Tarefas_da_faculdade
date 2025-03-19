@@ -17,16 +17,15 @@
 </html>
 <script>
     function verificar() {
-        if (ipt_min_altura.value > 1 && ipt_max_altura.value > ipt_min_altura) {
-            text.innerHTML = `Intervalo da altura de seleção é inválida! A altura 
-            inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial`
-            ipt_nome.value = 0
-            ipt_altura.value = 0
-        }
-        if (ipt_altura.value >= ipt_min_altura.value && ipt_altura.value <= ipt_max_altura.value) {
+        if (ipt_min_altura.value > 1 && ipt_max_altura.value > ipt_min_altura.value) {
+            if (ipt_altura.value >= ipt_min_altura.value && ipt_altura.value <= ipt_max_altura.value) {
             text.innerHTML += `<br>O candidato ${ipt_nome.value}, com altura de ${ipt_altura.value} metros, participará do processo de seleção de piloto`
-        } else {
+            } else {
             text.innerHTML += `<br>Infelizmente, o candidato ${ipt_nome.value}, com altura de ${ipt_altura.value} metros, não atende os requisitos da seleção`
+            }
+        }else{
+            alert("Intervalo da altura de seleção é inválida! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial")
         }
+
     }
 </script>
