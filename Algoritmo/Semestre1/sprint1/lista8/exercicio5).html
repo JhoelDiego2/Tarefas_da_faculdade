@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação de Alunos</title>
+</head>
+<body>
+    <h1>Classificador de Notas</h1>
+    Digite a nota do aluno: <br><input id="ipt_nota"><br><br>
+    <button onclick="analisar()">Classificar aluno</button>
+</body>
+</html>
+<script>
+    function analisar() {
+        var nota = Number(ipt_nota.value);
+        if (nota < 0 || nota > 10 || nota == "") {
+            alert("Nota inválida! Digite entre 0 e 10.");
+        } else if (nota < 5) {
+            alert("Aluno precisa de muita ajuda");
+        } else if (nota <= 7) {
+            alert("Aluno na média");
+        } else if (nota <= 9.5) {
+            alert("Aluno acima da média");
+        } else {
+            alert("Aluno fora da curva");
+        }
+    }
+</script>

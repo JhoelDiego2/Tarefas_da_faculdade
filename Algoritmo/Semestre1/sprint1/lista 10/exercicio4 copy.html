@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="contar()">S2 Pares</button>
+    <div id="text"></div>
+</body>
+</html>
+<script>
+    var resto = 0
+    function contar() {
+        var i = 0
+        while ( i <= 100){
+            if ((i%2) == resto) {
+                text.innerHTML += `${i}<br>`
+                i++
+            } else {
+                i++
+            }
+        }
+    }
+</script>

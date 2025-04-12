@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta de Economia</title>
+</head>
+<body>
+    <h1>Analisador de Economia</h1>
+    Meta de economia (R$): <br><input id="ipt_meta"><br><br>
+    Valor guardado (R$): <br><input id="ipt_economia"><br><br>
+    <button onclick="analisar()">Analisar economia</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var meta = Number(ipt_meta.value);
+        var economia = Number(ipt_economia.value);
+        
+        if (meta <= 0 || economia < 0) {
+            alert("Digite valores válidos e positivos!");
+        } else if (economia >= meta) {
+            var diferenca = economia - meta;
+            texto_tela.innerHTML = "Parabéns, meta alcançada!";
+            if (diferenca > 0) {
+                texto_tela.innerHTML += "<br>Meta ultrapassada em R$" + diferenca.toFixed(2);
+            }
+        } else {
+            var falta = meta - economia;
+            texto_tela.innerHTML = "Força! Ainda em busca da meta! Falta R$" + falta.toFixed(2);
+        }
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite um numeros<input id="numero"><br><br>
+    Digite um numero <input id="numero2">
+    <button onclick="pares()">S2 Pares</button>
+    <div id="txt"></div>
+</body>
+
+</html>
+<script>
+    function pares() {
+        var n = Number(numero2.value)
+        var i = Number(numero.value)
+        if (n == '' || i == '') {
+            alert("Digite um número valido por favor")
+        } else {
+            while (i <= n) {
+                if ((i % 2)== 0) {
+                    txt.innerHTML += `${i} <br>`
+                    i++
+                } else {
+                    i++
+                }
+            }
+        }
+    }
+</script>

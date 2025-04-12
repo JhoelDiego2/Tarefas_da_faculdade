@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    EX.1
+    <button onclick="contar()">Contar</button>
+    <div id="text"></div>
+    <br><br><br>
+    EX.2
+    <button onclick="contar_palavra()">Diga algo sobre a matéria de Algoritmos</button>
+    <div id="text"></div>
+    <br><br>
+    EX.3
+    Digite uma frase: <br><input id="frase">
+    <button onclick="contar()">Contar</button>
+    <div id="text"></div>
+    <br><br><br>
+    EX. 4
+    <button onclick="contar()">S2 Pares</button>
+    <div id="text"></div>
+</body>
+
+</html>
+<script>
+    function contar() {
+        text.innerHTML += ``
+        for (let i = 1; i < 15; i++) {
+            text.innerHTML += `${i} <br>`
+        }
+    }
+</script>
+<script>
+    function contar_palavra() {
+        text.innerHTML += ``
+        for (let i = 1; i <= 7; i++) {
+            text.innerHTML += `Hakunamatata <br>`
+
+        }
+    }
+</script>
+
+<script>
+    function contar() {
+        text.innerHTML += ``
+        for (let i = 1; i <= 7; i++) {
+            text.innerHTML += `${i} - ${frase.value}<br>`
+        }
+    }
+</script>
+<script>
+    var resto = 0
+    function contar() {
+        text.innerHTML += ``
+        for (let i = 1; i <= 100; i++) {
+            if ((i % 2) == resto) {
+                text.innerHTML += `${i}<br>`
+            }
+        }
+    }
+</script>

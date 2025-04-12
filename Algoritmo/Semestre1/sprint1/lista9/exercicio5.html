@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Clima</title>
+</head>
+<body>
+    <h1>Avalie o Clima</h1>
+    Temperatura (ºC): <br><input id="ipt_temp"><br><br>
+    Umidade (%): <br><input id="ipt_umidade"><br><br>
+    <button onclick="avaliar()">Avaliar clima</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function avaliar() {
+        var temp = Number(ipt_temp.value);
+        var umidade = Number(ipt_umidade.value);
+        
+        if (umidade < 0 || umidade > 100) {
+            alert("Valor de umidade inválido");
+            texto_tela.innerHTML = "";
+        } else {
+            if (temp >= 22 && temp <= 23 && umidade < 60) {
+                texto_tela.innerHTML = "Clima agradável";
+            } else {
+                texto_tela.innerHTML = "Clima desconfortável";
+            }
+        }
+    }
+</script>

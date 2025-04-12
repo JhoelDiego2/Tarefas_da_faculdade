@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depósitos com Estrela</title>
+</head>
+<body>
+    <h1>Depósitos com Bônus</h1>
+    Quantos depósitos: <input id="iptdepositos">
+    Valor: <input id="iptvalor">
+    <button onclick="calcular()">Acompanhar grana</button>
+    <div id="texto"></div>
+</body>
+<script>
+    function calcular() {
+        var depositos = Number(iptdepositos.value);
+        var valor = Number(iptvalor.value);
+        var total = 0;
+        var i = 1;
+        
+        if (depositos == '' || valor == '') {
+            alert("Digite valores válidos!");
+        } else {
+            while (i <= depositos) {
+                total += valor;
+                if (i % 3 === 0) {
+                    total = total * 1.01; // Bônus de 1%
+                    texto.innerHTML += `${i}  'º Mês: R$  ${total.toFixed(2)}  <img src="https://th.bing.com/th/id/OIP.zoFBA-qZyxDCuZ0IuBqd1QAAAA?rs=1&pid=ImgDetMain" style="width: 15px"> <br>`;
+                } else {
+                    texto.innerHTML += i + "º Mês: R$ " + total.toFixed(2) + "<br>";
+                }
+                i++;
+            }
+            texto.innerHTML += "Total: R$ " + total.toFixed(2);
+        }
+    }
+</script>
+</html>

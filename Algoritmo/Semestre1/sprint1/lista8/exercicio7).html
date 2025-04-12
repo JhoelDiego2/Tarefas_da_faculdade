@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Calorias</title>
+</head>
+<body>
+    <h1>Controle de Calorias</h1>
+    Pães franceses/dia: <br><input id="ipt_pao"><br><br>
+    Pacotes de bolacha/dia: <br><input id="ipt_bolacha"><br><br>
+    Copos de achocolatado/dia: <br><input id="ipt_achocolatado"><br><br>
+    <button onclick="calcular()">Verificar calorias</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var paes = Number(ipt_pao.value);
+        var bolachas = Number(ipt_bolacha.value);
+        var achocolatados = Number(ipt_achocolatado.value);
+        
+        if (paes < 0 || bolachas < 0 || achocolatados < 0) {
+            alert("Valores não podem ser negativos!");
+        } else {
+            var calorias = (paes * 50) + (bolachas * 80) + (achocolatados * 70);
+            if (calorias < 200) {
+                texto_tela.innerHTML = "Parabéns, vai ficar em forma!";
+            } else if (calorias <= 400) {
+                texto_tela.innerHTML = "Cuidado, vai ficar menos saudável!";
+            } else {
+                texto_tela.innerHTML = "Alerta crítico de saúde!!!";
+            }
+        }
+    }
+</script>

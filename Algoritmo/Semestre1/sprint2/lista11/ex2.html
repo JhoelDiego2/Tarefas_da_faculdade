@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o seu nome: <br><input id="ipt_nome" oninput="digitando()">
+    <div id="texto"></div>
+</body>
+</html>
+<script>
+    function digitando() {
+        var nome = ipt_nome.value
+        var i = nome.length
+        for (i ; i < 10; i++) {
+            
+            texto.innerHTML = 'Nome invalido';
+            break;
+        }
+        if(i >= 10){
+            texto.innerHTML = 'Nome valido';
+        }
+    }
+</script>

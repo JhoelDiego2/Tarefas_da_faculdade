@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Atendimento</title>
+</head>
+<body>
+    <h1>Avalie o Atendimento</h1>
+    Nota (0 a 10): <br><input id="ipt_nota"><br><br>
+    <button onclick="avaliar()">Avaliar atendimento</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function avaliar() {
+        var nota = Number(ipt_nota.value);
+        if (nota < 0 || nota > 10) {
+            texto_tela.innerHTML = "Nota inválida";
+        } else if (nota < 5) {
+            texto_tela.innerHTML = "Não aprovado";
+        } else if (nota <= 6) {
+            texto_tela.innerHTML = "Neutro";
+        } else {
+            texto_tela.innerHTML = "Aprovado";
+        }
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café com Leite</title>
+</head>
+<body>
+    <h1>Café com Leite</h1>
+    Xícaras: <input id="iptxicaras">
+    <button onclick="calcular()">Ver colheres</button>
+    <div id="texto"></div>
+</body>
+<script>
+    function calcular() {
+        var xicaras = Number(iptxicaras.value);
+        
+        if (xicaras == '') {
+            alert("Digite um número!");
+        } else {
+            var leite = xicaras;
+            var cafe = xicaras * 2;
+            texto.innerHTML = "Leite: " + leite + " colher(es)<br>Café: " + cafe + " colher(es)";
+        }
+    }
+</script>
+</html>

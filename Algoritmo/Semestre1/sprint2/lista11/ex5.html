@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite o seu email: <br><input id="ipt_email" ><br><br>
+    Digite a sua senha: <br><input id="ipt_senha"><br><br>
+    <button onclick="validar()">Validar</button>
+    <div id="texto"></div>
+</body>
+
+</html>
+<script>
+    function validar() {
+        var email = ipt_email.value
+        var senha = ipt_senha.value
+
+    if (email == '' || senha == '') {
+        alert('Opa algo deu errado, porfavor prencher todos os campos')
+    } else {
+        if ((email.endsWith('@SPTech.com.br')) && (senha.length >= 4)) {
+            alert("Cadastro válido")
+
+        } else {
+            alert("Valores inválidos")
+
+        }
+    }
+    }
+</script>

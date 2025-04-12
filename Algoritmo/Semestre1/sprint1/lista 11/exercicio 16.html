@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carona Personalizada</title>
+</head>
+<body>
+    <h1>Carona com Capacidade</h1>
+    Quantas pessoas: <input id="iptpessoas">
+    Capacidade: <input id="iptcapacidade">
+    <button onclick="entrar()">#Partiu Carona!</button>
+    <div id="texto"></div>
+</body>
+<script>
+    function entrar() {
+        var pessoas = Number(iptpessoas.value);
+        var capacidade = Number(iptcapacidade.value);
+        
+        if (pessoas == '' || capacidade == '') {
+            alert("Digite valores válidos!");
+        } else {
+            texto.innerHTML = '';
+            for (var i = 1; i <= pessoas; i++) {
+                if (i === 1) {
+                    texto.innerHTML += "Entrou o " + i + "º (motorista)<br>";
+                } else if (i <= capacidade) {
+                    texto.innerHTML += "Entrou o " + i + "º<br>";
+                } else {
+                    texto.innerHTML += "O " + i + "º espera!<br>";
+                }
+            }
+        }
+    }
+</script>
+</html>

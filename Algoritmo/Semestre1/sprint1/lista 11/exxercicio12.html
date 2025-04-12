@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual tabela você gostaria de ver [2 a 9]: <br><input id="numero"><br><br>
+    Digite até que número você gostaria que seja a tabuada: <input id="limite"><br><br>
+    <button onclick="contar()">Contar</button>
+    <div id="text"></div>
+</body>
+</html>
+<script>
+    function contar() {
+        var n = Number(numero.value)
+        var l = Number(limite.value)
+        text.innerHTML = ''
+
+        for (var i = 1; i <= l; i++) {
+            if (i % 2 == 0) {
+                text.innerHTML += `<span style="color: blue;"> ${n} x ${i} = ${ n * i} </span> <br>`
+            } else {
+                text.innerHTML += `<span style="color: red;"> ${n} x ${i} = ${ n * i} </span><br>`
+            }
+        }
+    }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura Humana</title>
+</head>
+<body>
+    <h1>Classificador de Temperatura</h1>
+    Digite a temperatura (em ºC): <br><input id="ipt_temp"><br><br>
+    <button onclick="analisar()">Analisar</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var temp = Number(ipt_temp.value);
+        if (temp == "" || temp < -273) {
+            alert("Temperatura inválida!");
+        } else if (temp < 14) {
+            texto_tela.innerHTML = "Congelante";
+        } else if (temp <= 21) {
+            texto_tela.innerHTML = "Com Frio";
+        } else if (temp <= 24) {
+            texto_tela.innerHTML = "Confortável";
+        } else if (temp <= 31) {
+            texto_tela.innerHTML = "Com Calor";
+        } else {
+            texto_tela.innerHTML = "Calor escaldante";
+        }
+    }
+</script>

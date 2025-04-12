@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite o seu email: <br><input id="ipt_email" oninput="digitando()">
+    <div id="texto"></div>
+</body>
+
+</html>
+<script>
+    function digitando() {
+        var email = ipt_email.value
+        var i = email.length
+
+        if ((email.includes('@')) &&  (email.includes('.')) && i >= 7) {
+                texto.innerHTML = 'Email valido'
+
+        }else{
+            texto.innerHTML = 'Email invalido'
+        }
+        for (i; i < 8; i++) {
+            texto.innerHTML = 'Email invalido'
+        }
+
+    }
+</script>

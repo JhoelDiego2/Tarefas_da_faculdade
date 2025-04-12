@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número entre 20 e 100: <input id="numero">
+    <button onclick="contar()">Adoro múltiplos de 5</button>
+    <div id="text"></div>
+</body>
+</html>
+<script>
+    function contar() {
+        var i = 0
+        while (i <= numero.value) {
+            if ((numero.value % 5) == 0) {
+                text.innerHTML += `${i} <br>`
+                i = i +5
+            } else {
+                i = i +5
+            }
+        }
+
+    }
+</script>

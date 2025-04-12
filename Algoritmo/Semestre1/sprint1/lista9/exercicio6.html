@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Aluno</title>
+</head>
+<body>
+    <h1>Desempenho do Aluno</h1>
+    Nota (0 a 10): <br><input id="ipt_nota"><br><br>
+    Frequência (0 a 100%): <br><input id="ipt_frequencia"><br><br>
+    <button onclick="analisar()">Analisar aluno</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var nota = Number(ipt_nota.value);
+        var frequencia = Number(ipt_frequencia.value);
+        
+        // Validações
+        if (nota < 0 || nota > 10) {
+            alert("Onde já se viu nota <0 ou >10?!");
+            texto_tela.innerHTML = "";
+        }
+        if (frequencia < 0 || frequencia > 100) {
+            alert("Onde já se viu frequência <0 ou >100?!");
+            texto_tela.innerHTML = "";
+        }
+        
+        if (nota < 6) {
+            texto_tela.innerHTML = "Aluno ficou abaixo da média";
+        } else if (nota <= 8) {
+            texto_tela.innerHTML = "Aluno ficou na média";
+        } else {
+            texto_tela.innerHTML = "Aluno acima da média";
+        }
+        
+        if (frequencia >= 75) {
+            texto_tela.innerHTML += "<br>Aluno aprovado por frequência";
+        } else {
+            texto_tela.innerHTML += "<br>Aluno reprovado por frequência";
+        }
+    }
+</script>

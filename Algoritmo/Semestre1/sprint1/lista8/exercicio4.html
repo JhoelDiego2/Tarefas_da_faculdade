@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peso de Crianças</title>
+</head>
+<body>
+    <h1>Verificador de Peso</h1>
+    Digite o peso da criança (em kg): <br><input id="ipt_peso"><br><br>
+    <button onclick="analisar()">Analisar</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var peso = Number(ipt_peso.value);
+        if (peso <= 0 || peso == "") {
+            alert("Peso inválido!");
+        } else if (peso == 18.3) {
+            texto_tela.innerHTML = "Peso perfeito";
+        } else if (peso <= 13.5) {
+            texto_tela.innerHTML = "Abaixo do peso";
+        } else if (peso > 21.2) {
+            texto_tela.innerHTML = "Acima do peso";
+        } else {
+            texto_tela.innerHTML = "Peso na média";
+        }
+    }
+</script>

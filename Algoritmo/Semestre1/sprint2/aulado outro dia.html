@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Exemplo de estilizaççção </h2>
+    entre com um numero <input id="num" >
+    <button onclick="mostrar"> mostrar</button>   
+    <div id="text"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        for (var  index =0;  index < num.value ;index++) {
+            if (index%2 == 0 ) {
+                text.style.color = 'blue'
+                text.innerHTML = `${num.value} é par <br> `
+            } else {
+                text.style.color = 'red'
+                text.innerHTML = `${num.value} é impar <br>`
+            }
+            
+        }
+    }
+</script>

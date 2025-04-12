@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carona</title>
+</head>
+<body>
+    <h1>Simulador de Carona</h1>
+    Quantas pessoas: <input id="iptpessoas">
+    <button onclick="entrar()">#Partiu Carona!</button>
+    <div id="texto"></div>
+</body>
+<script>
+    function entrar() {
+        var pessoas = Number(iptpessoas.value);
+        var i = 1;
+        
+        if (pessoas == '') {
+            alert("Digite um número válido!");
+        } else {
+            while (i <= pessoas) {
+                if (i === 1) {
+                    texto.innerHTML += "Entrou o " + i + "º (motorista)<br>";
+                } else if (i <= 5) {
+                    texto.innerHTML += "Entrou o " + i + "º<br>";
+                } else {
+                    texto.innerHTML += "O " + i + "º espera!<br>";
+                }
+                i++;
+            }
+        }
+    }
+</script>
+</html>

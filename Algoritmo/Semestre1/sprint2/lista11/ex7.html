@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+    Digite a senha: <br> <input id="ipt_senha" oninput="digitando()">
+    <div id="texto"></div>
+</body>
+</html>
+<script>
+    function digitando() {
+        var senha = ipt_senha.value
+        var transsenha = ''
+        transsenha = senha.replaceAll('a','@')
+        transsenha = transsenha.replaceAll('e','3')
+        transsenha = transsenha.replaceAll('E','3')
+        transsenha = transsenha.replaceAll('A','@')
+        texto.innerHTML = transsenha
+    }
+</script>

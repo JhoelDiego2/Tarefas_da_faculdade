@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número entre 0 e 200<input id="numero"><br><br>
+    <button onclick="viva()">Viva o 7!</button>
+    <div id="txt"></div>
+</body>
+</html>
+<script>
+    function viva() {
+        var num = numero.value
+        var i = 0
+        if (num < 0 || num > 200 || num == ' ') {
+            alert('Digite um número valido por favor')
+        } else {
+            while (i <= num) {
+                if ((num % 7)== 0) {
+                    txt.innerHTML += `${num} <br>`
+                    i++
+                } else {
+                    i++
+                }
+            }
+        }
+    }
+</script>

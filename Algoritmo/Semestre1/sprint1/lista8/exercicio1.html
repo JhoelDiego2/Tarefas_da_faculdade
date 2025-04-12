@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura para Esportes</title>
+</head>
+<body>
+    <h1>Verificador de Esportes</h1>
+    Digite sua altura (em metros): <br><input id="ipt_altura"><br><br>
+    <button onclick="analisar()">Analisar Estatura</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var altura = Number(ipt_altura.value);
+        if (altura <= 0 || altura == "") {
+            alert("Altura inválida! Digite um número positivo.");
+        } else if (altura <= 1.65) {
+            texto_tela.innerHTML = "Você pode ser piloto de corrida";
+        } else if (altura <= 1.80) {
+            texto_tela.innerHTML = "Você pode ser jogador de futebol";
+        } else {
+            texto_tela.innerHTML = "Você pode ser jogador de vôlei ou basquete";
+        }
+    }
+</script>

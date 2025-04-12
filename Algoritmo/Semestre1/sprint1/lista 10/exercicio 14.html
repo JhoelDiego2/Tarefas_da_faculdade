@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fases da Vida</title>
+</head>
+<body>
+    <h1>Fases da Vida</h1>
+    Digite sua idade: <input id="iptidade">
+    <button onclick="mostrar()">Exibir fases</button>
+    <div id="texto"></div>
+</body>
+<script>
+    function mostrar() {
+        var idade = Number(iptidade.value);
+        var i = 0;
+        
+        if (idade == '') {
+            alert("Digite uma idade válida!");
+        } else {
+            while (i <= idade) {
+                var fase = "";
+                if (i <= 4) fase = "Primeira Infância";
+                else if (i <= 6) fase = "Pré-escolar";
+                else if (i <= 10) fase = "Segunda Infância";
+                else if (i <= 18) fase = "Adolescência";
+                else if (i <= 50) fase = "Adulto";
+                else if (i <= 100) fase = "Melhor idade";
+                else fase = "Matusalém";
+                
+                texto.innerHTML += i + " anos (" + fase + ")<br>";
+                i++;
+            }
+        }
+    }
+</script>
+</html>

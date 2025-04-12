@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depósitos</title>
+</head>
+<body>
+    <h1>Depósitos Bancários</h1>
+    Quantos depósitos: <input id="iptdepositos">
+    Valor: <input id="iptvalor">
+    <button onclick="calcular()">Acompanhar grana</button>
+    <div id="texto"></div>
+</body>
+<script>
+    function calcular() {
+        var depositos = Number(iptdepositos.value);
+        var valor = Number(iptvalor.value);
+        var total = 0;
+        
+        if (depositos == '' || valor == '') {
+            alert("Digite valores válidos!");
+        } else {
+            texto.innerHTML = '';
+            for (var i = 1; i <= depositos; i++) {
+                total += valor;
+                texto.innerHTML += i + "º Mês: R$ " + total.toFixed(2) + "<br>";
+            }
+            texto.innerHTML += "<strong>Total: R$ " + total.toFixed(2) + "</strong>";
+        }
+    }
+</script>
+</html>

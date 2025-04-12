@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garrafas de Coca</title>
+</head>
+<body>
+    <h1>Garrafas de Coca</h1>
+    Quantas bebeu: <input id="iptquantidade">
+    <button onclick="mostrar()">Ver garrafas</button>
+    <div id="imagem" ></div>
+</body>
+<script>
+    function mostrar() {
+        var qtd = Number(iptquantidade.value);
+        
+        if (qtd == '') {
+            alert("Digite um número!");
+        } else {
+            imagem.innerHTML = ``
+            for (var i = 1; i <= qtd; i++) {
+                imagem.innerHTML += `<img src="https://ibassets.com.br/ib.item.image.big/b-034b64487bf24f479bceb121f8b1ec2b.png" style="width: 80px">`;
+            }
+        }
+    }
+</script>
+</html>

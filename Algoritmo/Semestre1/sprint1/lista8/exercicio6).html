@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time de São Paulo</title>
+</head>
+<body>
+    <h1>Torcedor Paulista</h1>
+    Digite seu time (Corinthians/Palmeiras/Santos/São Paulo): <br>
+    <input id="ipt_time"><br><br>
+    <button onclick="analisar()">Fale sobre esse time</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var time = ipt_time.value;
+        if (time == "") {
+            alert("Digite um time válido!");
+        } else if (time == "Corinthians") {
+            texto_tela.innerHTML = "Salve o Corinthians";
+            texto_tela.style.backgroundColor = "black";
+            texto_tela.style.color = "white";
+        } else if (time == "Palmeiras") {
+            texto_tela.innerHTML = "Salve o alviverde imponente";
+            texto_tela.style.backgroundColor = "green";
+            texto_tela.style.color = "white";
+        } else if (time == "Santos") {
+            texto_tela.innerHTML = "Agora quem dá a bola é o Santos";
+            texto_tela.style.backgroundColor = "white";
+            texto_tela.style.color = "black";
+        } else if (time == "São Paulo") {
+            texto_tela.innerHTML = "Salve o Tricolor paulista";
+            texto_tela.style.backgroundColor = "black";
+            texto_tela.style.color = "red";
+        } else {
+            alert("Time não reconhecido! Digite Corinthians, Palmeiras, Santos ou São Paulo.");
+        }
+    }
+</script>

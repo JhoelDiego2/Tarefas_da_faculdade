@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilhete Único SP</title>
+</head>
+<body>
+    <h1>Simulador de Passagem</h1>
+    Tipo de passageiro (Comum/Estudante/Idoso/PNE): <br><input id="ipt_tipo"><br><br>
+    Tipo de passagem (Única/Integração): <br><input id="ipt_passagem"><br><br>
+    <button onclick="calcular()">Simular preço</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var tipo = ipt_tipo.value;
+        var passagem = ipt_passagem.value;
+        var preco = 0;
+
+        if (tipo == '' || passagem == '') {
+            alert("Opa, algo deu errado. Porfavor verificar os campo de tipo de passageiro ou passsagem.")
+        } else {
+            if (tipo  != "Comum" && tipo != "Estudante" && tipo!= "Idoso" && tipo != "PNE" && passagem != "Integração" && passagem != "Única") {
+                alert("tipo de passageiro ou passsagem não reconhecido! Digite Corretamente.")
+            }else{
+                if (tipo == "Comum") {
+                    if (passagem == "Única") {
+                        preco = 4.40;
+                    } else if (passagem == "Integração") {
+                        preco = 5.90;
+                    }
+                } else if (tipo == "Estudante") {
+                    if (passagem == "Única") {
+                        preco = 4.40 * 0.5;
+                    } else if (passagem == "Integração") {
+                        preco = 5.90 * 0.5;
+                    }
+                } else if (tipo == "Idoso" || tipo == "PNE") {
+                    preco = 0;
+                }
+                
+                texto_tela.innerHTML = "Valor da passagem escolhida: R$" + preco.toFixed(2);
+            }
+        }
+    }
+</script>

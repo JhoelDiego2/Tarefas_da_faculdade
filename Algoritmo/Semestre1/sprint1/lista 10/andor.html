@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio AND/OR</title>
+</head>
+
+<body>
+    <center>
+    <h1>Desafio AND/OR</h1>
+    Digite o número de produtos comprados: <br> <input id="input_quantidade_produtos"><br><br>
+    Digite o valor total gasto [R$]: <br> <input id="input_valor_total"><br><br>
+    O cliente é vip [Sim/Não]? : <br> <select id="select_cliente_vip" > 
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+    </select> <br><br>
+    <button onclick="analisar()">Analisar</button><br>
+    <div id="texto"></div>
+    </center>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var quantidade = input_quantidade_produtos.value
+        var total = input_valor_total.value
+        var vip = select_cliente_vip.value == 'Sim'
+        var valor_final = 0
+        var pontos = 0
+        var descontos = 0
+
+        if (quantidade == '' || total == '' ) {
+            alert("Opa, algo deu errado, porfavor prencher os campos corretamente")
+        } else {
+            if (quantidade <= 0 || total <= 0) {
+                alert("Opa, algo deu errado, porfavor digitar um valor valido")
+            }else{
+            valor_final = total 
+
+            if ((quantidade > 5 && total > 200 )|| vip) {
+                pontos = 50
+            }
+            if (quantidade > 10 && total > 500) {
+                pontos = pontos + 100
+            }
+            if (((quantidade >= 6 && quantidade <= 10) && (total > 200 )|| vip)) {
+                valor_final = valor_final * 0.95
+                descontos = 5
+            }
+            if ((quantidade > 10 && total > 500) || vip) {
+                valor_final = valor_final * 0.9
+                descontos = descontos + 10
+            }
+            if ((quantidade > 10 && total > 1000) && vip) {
+                valor_final = valor_final * 0.85
+                descontos = descontos + 15
+            }
+            texto.innerHTML = `
+            QUANTIDADE DE PRODUCTOS: ${quantidade}<br> 
+            VALOR TOTAL GASTO: R$${total}<br> 
+            DESCONTO DADO(%) = ${descontos}% <br> 
+            PONTOS DE RECOMPENSA = ${pontos}<br> <br> 
+            VALOR A SER COBRADO ÁPOS O DESCONTO APLICADO: R$${valor_final} `
+        }
+        }
+    }              
+</script>

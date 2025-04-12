@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinder do Robervaldo</title>
+</head>
+<body>
+    <h1>Deu Match?</h1>
+    Altura (em metros): <br><input id="ipt_altura"><br><br>
+    Cor do cabelo (Preto/Vermelho/Amarelo/Castanho): <br><input id="ipt_cabelo"><br><br>
+    <button onclick="verificarMatch()">Deu match?</button><br>
+    <div id="texto_tela"></div>
+    <img id="img_match" src="" style="width: 250px;">
+</body>
+</html>
+<script>
+    function verificarMatch() {
+        var altura = Number(ipt_altura.value);
+        var cabelo = ipt_cabelo.value;
+        var img = img_match
+
+
+        if (altura <= 0 || cabelo == '') {
+            alert("Opa, algo deu errado. Porfavor verificar os campo de altura e cabelo ")
+        } else {
+            if (cabelo != "Castanho" && cabelo != "Amarelo" && cabelo != "Preto" && "Vermelho") {
+            alert("Altura ou cabelo não reconhecido! Digite Corretamente.")
+            } else {
+                if (altura < 1.85 && (cabelo == "Castanho" || cabelo == "Amarelo")) {
+                texto_tela.innerHTML = "Match! Robervaldo está feliz!";
+                img.src = "https://i.pinimg.com/originals/fc/9c/1f/fc9c1fefa54ec166cf4d7c1ffecdf233.jpg"; 
+                } else {
+                    texto_tela.innerHTML = "Sem match... Robervaldo está decepcionado.";
+                    img.src = "https://th.bing.com/th/id/OIP.wq6-z4bY02f6i2VM9APZlgHaE8?w=810&h=540&rs=1&pid=ImgDetMain"; 
+                }
+            }
+        }
+    }
+</script>

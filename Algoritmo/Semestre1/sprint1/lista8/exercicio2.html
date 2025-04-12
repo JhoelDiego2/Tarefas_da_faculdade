@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe Social em Tuvalu</title>
+</head>
+<body>
+    <h1>Classificador de Renda</h1>
+    Digite a renda familiar mensal (em $): <br><input id="ipt_renda"><br><br>
+    <button onclick="analisar()">Analisar Renda</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var renda = Number(ipt_renda.value);
+        if (renda <= 0 || renda == "") {
+            alert("Renda inválida! Digite um valor positivo.");
+        } else if (renda <= 250) {
+            texto_tela.innerHTML = "Classe E";
+        } else if (renda <= 900) {
+            texto_tela.innerHTML = "Classe D";
+        } else if (renda <= 2500) {
+            texto_tela.innerHTML = "Classe C";
+        } else if (renda <= 9500) {
+            texto_tela.innerHTML = "Classe B";
+        } else {
+            texto_tela.innerHTML = "Classe A";
+        }
+    }
+</script>

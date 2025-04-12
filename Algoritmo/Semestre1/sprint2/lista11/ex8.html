@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a sua frase: <br><input id="ipt_frase" oninput="digitando()"><br><br>
+    <div id="texto"></div>
+</body>
+</html>
+<script>
+
+    function digitando() {
+        var frase = ipt_frase.value
+        var total = frase.length
+        var ultima = frase[(total)-1]
+        texto.innerHTML += `${ultima} <br>`
+    }
+   
+</script>

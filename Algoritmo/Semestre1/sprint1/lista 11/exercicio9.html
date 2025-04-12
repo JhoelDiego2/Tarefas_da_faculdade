@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número entre 0 e 200<input id="numero"><br><br>
+    Digite uma frase: <input id="fras">
+    <button onclick="fazer()">Papagaio</button>
+    <div id="txt"></div>
+</body>
+</html>
+<script>
+    function fazer() {
+        var num = numero.value
+        var frase = fras.value
+        if (frase == '' || num == ' ') {
+            alert('Porfavor vefificar os campos inseridos')
+        } else {
+            for (let i = 0; i <= num; i++) {
+                if ((num % 7)== 0) {
+                    txt.innerHTML += `${num} <br>`
+                } else {
+                }
+                
+            }
+        }
+    }
+</script>

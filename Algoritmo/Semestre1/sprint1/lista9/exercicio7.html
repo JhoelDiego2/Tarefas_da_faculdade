@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Melete - Tentativas</title>
+</head>
+<body>
+    <h1>Autenticação com Tentativas</h1>
+    Login: <br><input id="ipt_login"><br><br>
+    Senha: <br><input type="password" id="ipt_senha"><br><br>
+    Informação pessoal (ano ou pet): <br><input id="ipt_info"><br><br>
+    <button onclick="autenticar()">Autenticar</button><br>
+    <div id="texto_tela"></div>
+    <div id="tentativas_restantes"></div>
+</body>
+</html>
+<script>
+    var tentativas = 3;
+    var bloqueado = false;
+    
+    function autenticar() {
+        if (bloqueado) {
+            texto_tela.innerHTML = "Usuário BLOQUEADO! Procure seu gerente!";
+        }
+        
+        var login = ipt_login.value;
+        var senha = ipt_senha.value;
+        var info = ipt_info.value;
+        
+        if (login == "ana" && senha == "braga" && (info == "1949" || info == "louro José")) {
+            texto_tela.innerHTML = "Usuário autenticado";
+            tentativas = 3; // Reinicia tentativas
+            tentativas_restantes.innerHTML = "";
+        } else {
+            tentativas--;
+            if (tentativas > 0) {
+                texto_tela.innerHTML = "Falha na autenticação";
+                tentativas_restantes.innerHTML = "Você ainda tem " + tentativas + " tentativa(s)";
+            } else {
+                texto_tela.innerHTML = "Falha na autenticação";
+                tentativas_restantes.innerHTML = "Usuário BLOQUEADO! Procure seu gerente!";
+                bloqueado = true;
+            }
+        }
+    }
+</script>

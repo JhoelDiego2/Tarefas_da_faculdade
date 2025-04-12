@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite uma frase: <br><input id="frase">
+    <button onclick="contar()">Contar</button>
+    <div id="text"></div>
+</body>
+</html>
+<script>
+    function contar() {
+        var i = 1
+        while (i <= 7) {
+           text.innerHTML += `${i} - ${frase.value}<br>` 
+           i++
+        }
+    }
+</script>

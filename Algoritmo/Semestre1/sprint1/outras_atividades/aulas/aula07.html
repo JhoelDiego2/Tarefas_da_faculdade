@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2>LAÇÇO DE REPETIÇÃO - WHILE</h2>
+        <br><br>
+        <bUtton onclick="revelar()">Revelar Segrego</bUtton>
+        <div id="div_txt"></div>
+    </center>
+</body>
+</html>
+<script>
+    var index_global = 5; 
+    function revelar() {
+        while (index_global > 0) {
+            repeticao()
+            index_global--
+            div_txt.innerHTML += `<br>`
+        }
+    }
+    function repeticao() {
+        var index = 1
+        while (index <= index_global ){
+            div_txt.innerHTML += `${index} - MAMÃE EU TE AMO <br>`
+            index++
+        }
+    }
+</script>

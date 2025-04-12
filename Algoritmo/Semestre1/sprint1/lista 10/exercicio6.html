@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o nome da pesoa que você mais ama na vida: <br> <input id="nome"><br>
+    Digite quanto você ama [número inteiro]: <br><input id="numero"><br>
+    <button onclick="contar()">Expressar amor</button>
+    <div id="text"></div>
+</body>
+</html>
+<script>
+    function contar() {
+        var i = 1
+        while (i <= Number(numero.value)) {
+           text.innerHTML += `${i}- ${nome.value}, eu te amo! Sempre lembre disso!<br>` 
+           i++
+        }
+    }
+</script>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    input {
+        width: 30%;
+        margin: 1rem;
+    }
+</style>
+
+<body>
+    <div>
+        <h1>Oruo Odier</h1>
+        Qantidade de dinheiro disponivel na sua conta bancaria: <br>
+        <input id="ipt_dinheiro"><br><br>
+        Quantidade de pedras de ouro que você possui: <br>
+        <input id="ipt_ouro"> <br> <br>
+        Qual é o valor do aluguel: <br>
+        <input id="ipt_aluguel"> <br><br>
+        Quantos meses você irá pagar o aluguel: <br>
+        <input id="ipt_meses"> <br><br>
+        Quantidade de anos que prretende viver: <br>
+        <input id="ipt_vida"><br><br>
+
+        <div>
+            <button onclick="calculartotal()">Calcular</button>
+        </div>
+        <div id="texto"></div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    function calculartotal() {
+        var dinheiro = Number(ipt_dinheiro.value)
+        var ouro = Number(ipt_ouro.value)
+        var aluguel = Number(ipt_aluguel.value)
+        var meses = Number(ipt_meses.value)
+        var vida = Number(ipt_vida.value)
+        var saldo_inicial = dinheiro
+        var saldo_pedras = ouro
+        var saldo_final = 0
+        var total_meses = 0
+        if (dinheiro == '' || ouro == '' || aluguel == '' || meses == '' || vida == '') {
+            alert('Opa, algo deu errado, porfavir verifique todos os campos inseridos')
+        } else {
+            for (var i = 1; i <= vida; i++) {
+                texto.innerHTML += `<br><br>Ano - ${i} <br> <br>`
+                for (var mes = 1; mes <= meses; mes++) {
+                    saldo_final = saldo_inicial - aluguel
+
+                    if (saldo_final <= 0) {
+                        break
+                    } else {
+                     
+                        if (saldo_inicial < aluguel) {
+                        saldo_pedras--
+                        saldo_inicial = saldo_inicial + 10000
+                    }
+                    if (saldo_pedras >= 0) {
+                        texto.innerHTML += `
+                        Mês ${mes} saldo inicial no banco   ${saldo_inicial} - 
+                         saldo de pedras= ${saldo_pedras} -
+                        saldo final no banco - ${saldo_final} <br>`
+                        saldo_inicial = saldo_final
+                    } else {
+                        break
+                    }
+                    }
+
+
+
+
+
+
+                }
+
+            }
+            if (saldo_inicial < aluguel && saldo_pedras == 0) {
+                    texto.innerHTML += `<br><br>Após ${mes} meses de aluguem você faliu!!!!`
+                } else {
+                    texto.innerHTML += `<br><br>Foram pagos ${mes} meses de aluguel e
+                     você ficou com R$ ${saldo_final } no banco e ${saldo_pedras} pedras de ouro`
+                }
+        }
+
+    }
+</script>

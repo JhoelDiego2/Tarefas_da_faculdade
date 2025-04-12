@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poder de Compra</title>
+</head>
+<body>
+    <h1>Calculadora de Poder de Compra</h1>
+    Valor economizado (R$): <br><input id="ipt_economia"><br><br>
+    <button onclick="analisar()">Poder de compra</button><br>
+    <div id="texto_tela"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var economia = Number(ipt_economia.value);
+        
+        if (economia == "") {
+            alert("Digite um valor válido!");
+        } else if (economia <= 0) {
+            texto_tela.innerHTML = "Nada de compras";
+        } else if (economia < 100) {
+            texto_tela.innerHTML = "Viagem de ida e volta pra Praia Grande";
+        } else if (economia < 4000) {
+            texto_tela.innerHTML = "Uma boa moto usada";
+        } else {
+            texto_tela.innerHTML = "Mais alguma bobagem legal";
+        }
+    }
+</script>

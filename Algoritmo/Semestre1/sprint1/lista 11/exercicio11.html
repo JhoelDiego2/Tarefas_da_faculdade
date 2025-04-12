@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite quantas voltas um carro dará numa corrida:<input id="numero"><br><br>
+    <button onclick="corrida()">Iniciar corrida!</button>
+    <div id="txt"></div>
+</body>
+
+</html>
+<script>
+    function corrida() {
+        var n = Number(numero.value)
+        if (n == '') {
+            alert("Digite um número valido por favor")
+        } else {
+            txt.innerHTML = ''
+            for (var i = 1; i <= n; i++) {
+                txt.innerHTML += `Carro dando a ${i}ª volta   <br>`
+            }
+            txt.innerHTML += `Corrida finalizada!`
+        }
+    }
+</script>
